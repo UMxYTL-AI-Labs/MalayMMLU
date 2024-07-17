@@ -30,5 +30,5 @@ python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU 
 3. Evaluation for GPT
 
 ```
-python evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
+python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
