@@ -19,6 +19,9 @@ python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --tas
                     --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=$HOME/MalayMMLU/output/ --token $TOKEN
 
+python calculate_accuracies.py --pred_files $PRED_FILE \
+    --data_file=$SHOT \
+    --output_dir=$HOME/MalayMMLU/output/
 ```
 2. Evaluation by full answer probability
 ```
@@ -36,6 +39,10 @@ python calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```
 python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
+
+python calculate_accuracies.py --pred_files $PRED_FILE \
+    --data_file=$SHOT \
+    --output_dir=$HOME/MalayMMLU/output/
 ```
 
 # Acknowledgement
