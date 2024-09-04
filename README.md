@@ -25,6 +25,11 @@ python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --tas
 python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
                     --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=$HOME/MalayMMLU/output/ --token $TOKEN
+
+python calculate_accuracies.py --pred_files $PRED_FILE \
+    --data_file=$SHOT \
+    --output_dir=$HOME/MalayMMLU/output/
+
 ```
 
 3. Evaluation for GPT

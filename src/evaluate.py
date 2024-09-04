@@ -5,6 +5,8 @@ from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer, AutoMo
 from tqdm import tqdm
 from numpy import argmax
 import torch
+from utils import predict_classification_causal as predict_classification
+from utils import predict_classification_causal_by_letter as predict_classification_by_letter
 
 device = "cuda"
 # usage: python evaluate.py  --by_letter --shot 0 --use_chat_template True  --task=MalayMMLU --base_model=google/gemma-2b-it --output_folder=$HOME/MalayMMLU/output/  --token $TOKEN
@@ -15,7 +17,8 @@ def prepare_data(playground,use_chat_template,model_name, tokenizer,task):
         outputs = []
         outputs_options = []
         key2id = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
-        data = pd.read_json(f'../data/MalayMMLU_{shot}shot.json')
+        shot = 0
+        data = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
         if playground:
             data = data.iloc[:10]
         for idx, row in data.iterrows():
@@ -46,7 +49,7 @@ def prepare_data_few_shot(shot,use_chat_template, model_name, tokenizer,task):
         outputs = []
         outputs_options = []
         key2id = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
-        data = pd.read_json(f'../data/MalayMMLU_{shot}shot.json')
+        data = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
 
         for i in range(len(data)):
             row = data.iloc[i]
@@ -97,8 +100,7 @@ def main():
     
 
     model = model_class.from_pretrained(args.base_model, token=args.token, torch_dtype=torch.float16, trust_remote_code=True, device_map= "cuda")
-    from utils import predict_classification_causal as predict_classification
-    from utils import predict_classification_causal_by_letter as predict_classification_by_letter
+
     
 
     model.eval()
