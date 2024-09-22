@@ -3,10 +3,18 @@
 
 # Introduction
 
-MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondaary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
+MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
 <p align="center">
 <img src="imgs/MalayMMLU.png"   width="400" >
 </p>
+
+| **Category**   | **Subjects**                                                                                                                                                                                                                                                                                                                                                                                 |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **STEM**       | Computer Science (Secondary), Biology (Secondary), Chemistry (Secondary), Computer Literacy (Secondary), Mathematics (Primary, Secondary), Additional Mathematics (Secondary), Design and Technology (Primary, Secondary), Core Science (Primary, Secondary), Information and Communication Technology (Primary), Automotive Technology (Secondary) |
+| **Language**   | Malay Language (Primary, Secondary)                                                                                                                                                                                                                                                                                                                                                          |
+| **Social science** | Geography (Secondary), Local Studies (Primary), History (Primary, Secondary)                                                                                                                                                                                                                                                                                                               |
+| **Others**     | Life Skills (Primary, Secondary), Principles of Accounting (Secondary), Economics (Secondary), Business (Secondary), Agriculture (Secondary)                                                                                                                                                                                                                                                  |
+| **Humanities** | Quran and Sunnah (Secondary), Islam (Primary, Secondary), Sports Science Knowledge (Secondary)                                                                                                                                                                                                                                                                                                 |
 
 # Result
 
