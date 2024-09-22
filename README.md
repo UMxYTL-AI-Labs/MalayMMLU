@@ -1,5 +1,17 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language
 
+<p align="center"> 
+    <a href="#" target="_blank">Soon Chang Poh</a>, 
+    <a href="#" target="_blank">Sze Jue Yang</a>, 
+    <a href="#" target="_blank">Jeraelyn Ming Li Tan</a>, 
+    <a href="#" target="_blank">Lawrence Leroy Tze Yao Chieng</a>, 
+    <a href="#" target="_blank">Jia Xuan Tan</a>, 
+    <a href="#" target="_blank">Zhenyu Yu</a>, 
+    <a href="#" target="_blank">Chee Mun Foong</a>, 
+    <a href="http://cs-chan.com/" target="_blank">Chee Seng Chan</a> 
+</p>
+
+
 
 # Introduction
 
@@ -90,6 +102,16 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --output_dir=output/
 ```
 
+## Citation
+
+```bibtex
+@InProceedings{
+    author = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and  Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng }
+    title     = {MalayMMLU: A Multitask Benchmark for
+the Low-Resource Malay Language},
+    year      = {2024},
+}
+```
 # Acknowledgement
 
 The code base is based on [IndoMMLU](https://github.com/fajri91/IndoMMLU)
