@@ -48,6 +48,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 <p align="center">
 <img src="imgs/Few-shot%20comparison.png"   width="400" >
 </p>
+
 # Installation 
 
 ```
