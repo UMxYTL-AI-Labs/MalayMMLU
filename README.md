@@ -5,7 +5,7 @@
 
 MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondaary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
 
-<img src="imgs/MalayMMLU.PNG"   width="400" />
+<img src="imgs/MalayMMLU.PNG"   width="400" >
 
 # Result
 
@@ -37,7 +37,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 
 ### Few-shot results of LLMs on MalayMMLU (First token accuracy)
 
-<img src="imgs/Few-shot%20comparison.PNG"   width="400" />
+<img src="imgs/Few-shot%20comparison.PNG"   width="400" >
 
 # Installation 
 
