@@ -10,9 +10,11 @@ def main(api_key, model,shot):
     outputs_options = []
     key2id = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
     
-    data = pd.read_json(f'../data/MalayMMLU_{shot}shot.json')
+    data = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
+    print(data)
+
     if shot == 0:
-        for row in data.iterrows():
+        for idx,row in data.iterrows():
             ques = row['prompt']
             p = f"Berikut adalah soalan aneka pilihan tentang {row['subject']}. Sila berikan jawapan sahaja.\n\n" + ques + "\nJawapan:" 
             inputs.append(p)

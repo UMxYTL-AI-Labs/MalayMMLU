@@ -13,8 +13,8 @@
 
 <h4 align="center">
     <p>
-        <b href="https://github.com/YTLAILabs/MalayMMLU/">English</b> |
-        <a href="https://github.com/YTLAILabs/MalayMMLU/blob/main/README_ms.md">Bahasa Melayu</a> 
+        <a href="https://github.com/YTLAILabs/MalayMMLU/">English</a> |
+        <b href="https://github.com/YTLAILabs/MalayMMLU/blob/main/README_ms.md">Bahasa Melayu</b> 
     <p>
         <p align="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
         📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Paper</a> • 
@@ -22,26 +22,27 @@
         </p>
 </h4>
 
-# Introduction
+# Pengenalan
 
-MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
+MalayMMLU ialah penanda aras kefahaman bahasa multitugas (MLU) yang pertama untuk Bahasa Melayu. Penanda aras ini merangkumi 24,213 soalan yang meliputi peringkat pendidikan rendah (Tahun 1-6) dan menengah (Tingkatan 1-5) di Malaysia, yang terdiri daripada 5 topik utama yang terbahagi kepada 22 subjek.
+
 <p align="center">
 <img src="imgs/MalayMMLU.png"   width="400" >
 </p>
 
-| **Category**   | **Subjects**                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Topik**   | **Subjek**                                                                                                                                                                                                                                                                                                                                                                                 |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **STEM**       | Computer Science (Secondary), Biology (Secondary), Chemistry (Secondary), Computer Literacy (Secondary), Mathematics (Primary, Secondary), Additional Mathematics (Secondary), Design and Technology (Primary, Secondary), Core Science (Primary, Secondary), Information and Communication Technology (Primary), Automotive Technology (Secondary) |
-| **Language**   | Malay Language (Primary, Secondary)                                                                                                                                                                                                                                                                                                                                                          |
-| **Social science** | Geography (Secondary), Local Studies (Primary), History (Primary, Secondary)                                                                                                                                                                                                                                                                                                               |
-| **Others**     | Life Skills (Primary, Secondary), Principles of Accounting (Secondary), Economics (Secondary), Business (Secondary), Agriculture (Secondary)                                                                                                                                                                                                                                                  |
-| **Humanities** | Quran and Sunnah (Secondary), Islam (Primary, Secondary), Sports Science Knowledge (Secondary)                                                                                                                                                                                                                                                                                                 |
+| **STEM**       | Computer Science (Menengah), Biology (Menengah), Chemistry (Menengah), Computer Literacy (Menengah), Mathematics (Rendah, Menengah), Additional Mathematics (Menengah), Design and Technology (Rendah, Menengah), Core Science (Rendah, Menengah), Information and Communication Technology (Rendah), Automotive Technology (Menengah) |
+| **Bahasa**   | Malay Language (Rendah, Menengah)                                                                                                                                                                                                                                                                                                                                                          |
+| **Sains Sosial** | Geography (Menengah), Local Studies (Rendah), History (Rendah, Menengah)                                                                                                                                                                                                                                                                                                               |
+| **Lain-lain**     | Life Skills (Rendah, Menengah), Principles of Accounting (Menengah), Economics (Menengah), Business (Menengah), Agriculture (Menengah)                                                                                                                                                                                                                                                  |
+| **Kemanusiaan** | Quran and Sunnah (Menengah), Islam (Rendah, Menengah), Sports Science Knowledge (Menengah)                                                                                                                                                                                                                                                                                                 |
 
-# Result
+# Keputusan
 
-### Zero-shot results of LLMs on MalayMMLU (First token accuracy)
+### Keputusan Penilaian Zero-shot untuk MalayMMLU (Ketepatan token pertama)
 
-| **Model**               | **Language** | **Humanities** | **STEM** | **Social Science** | **Others** | **Average** |
+| **Model**               | **Bahasa** | **Kemanusiaan** | **STEM** | **Sains Sosial** | **Lain-lain** | **Purata** |
 |-------------------------|-------------------|---------------------|---------------|-------------------------|-----------------|------------------|
 | Random                  | 38.01             | 42.09               | 36.31         | 36.01                   | 38.07           | 38.02            |
 | GPT-4                   | **82.90**         | **83.91**           | **78.80**     | **77.29**               | **77.33**       | **80.11**        |
@@ -65,25 +66,24 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 | Komodo (7B)   | 43.62             | 45.53               | 39.34         | 39.75                   | 39.48           | 41.72            |
 | MaLLaM-v2(5B)| 42.56             | 46.42               | 42.16         | 40.81                   | 38.81           | 42.07            |
 
-### Few-shot results of LLMs on MalayMMLU (First token accuracy)
+### Keputusan Penilaian Few-shot untuk MalayMMLU (Ketepatan token pertama)
 <p align="center">
 <img src="imgs/Few-shot%20comparison.png"   width="400" >
 </p>
 
-# Installation 
+# Pemasangan
 
 ```
 git clone https://github.com/YTLAILabs/MalayMMLU
 cd MalayMMLU
 pip install -r requirements.txt
 ```
-# Evaluation
-* <code>SHOT</code> : 0, 1, 2 or 3
-* <code>--by_letter</code> flag for first token evaluation
-* <code>MODEL</code>: LLM's HuggingFace repo id such as <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
-* <code>PRED_FILE</code>: filename of prediction file
-### Evaluation by first token accuracy
-
+# Penilaian
+* <code>SHOT</code> : 0, 1, 2 atau 3
+* <code>--by_letter</code> flag untuk penilaian token pertama
+* <code>MODEL</code>: LLM's HuggingFace repo id seperti <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
+* <code>PRED_FILE</code>: nama fail ramalan
+### Penilaian berdasarkan ketepatan token pertama
 ```
 # prediction
 python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --task=MalayMMLU \
@@ -95,7 +95,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
 ```
-### Evaluation by full answer probability
+### Penilaian berdasarkan ketepatan jawapan penuh
 ```
 python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
                     --base_model=$MODEL  \
@@ -107,14 +107,14 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```
 
-### Evaluation for GPT
+### Penilaian untuk GPT
 
 * <code>API_KEY</code>: OpenAI API key
 ```
 # prediction
 python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
-Download the prediction file from [OpenAI platform](https://platform.openai.com/batches)
+Muat turun fail ramalan dari [OpenAI platform](https://platform.openai.com/batches)
 ```
 # calculate accurcacy
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
@@ -122,7 +122,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --output_dir=output/
 ```
 
-## Citation
+## Petikan
 
 ```bibtex
 @InProceedings{
@@ -132,6 +132,6 @@ the Low-Resource Malay Language},
     year      = {2024},
 }
 ```
-# Acknowledgement
+# Penghargaan
 
-The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+Kod ini dibina atas [IndoMMLU](https://github.com/fajri91/IndoMMLU)

@@ -11,16 +11,7 @@
     <a href="http://cs-chan.com/" target="_blank">Chee Seng Chan</a> 
 </p>
 
-<h4 align="center">
-    <p>
-        <b href="https://github.com/YTLAILabs/MalayMMLU/">English</b> |
-        <a href="https://github.com/YTLAILabs/MalayMMLU/blob/main/README_ms.md">Bahasa Melayu</a> 
-    <p>
-        <p align="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-        📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Paper</a> • 
-        🤗 <a href="https://huggingface.co/collections/ytlailabs2024/malaymmlu-66567e2c1ee98abe52bf955d" target="_blank" style="margin-left: 10px">Dataset</a> 
-        </p>
-</h4>
+
 
 # Introduction
 
@@ -134,4 +125,4 @@ the Low-Resource Malay Language},
 ```
 # Acknowledgement
 
-The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+The code base is based on [IndoMMLU](https://github.com/fajri91/IndoMMLU)
