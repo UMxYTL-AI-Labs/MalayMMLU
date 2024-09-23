@@ -1,13 +1,13 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language
 
 <p align="center"> 
-    <a href="#" target="_blank">Soon Chang Poh</a>, 
-    <a href="#" target="_blank">Sze Jue Yang</a>, 
-    <a href="#" target="_blank">Jeraelyn Ming Li Tan</a>, 
-    <a href="#" target="_blank">Lawrence Leroy Tze Yao Chieng</a>, 
-    <a href="#" target="_blank">Jia Xuan Tan</a>, 
-    <a href="#" target="_blank">Zhenyu Yu</a>, 
-    <a href="#" target="_blank">Chee Mun Foong</a>, 
+    Soon Chang Poh, 
+    Sze Jue Yang 
+    Jeraelyn Ming Li Tan, 
+    Lawrence Leroy Tze Yao Chieng, 
+    Jia Xuan Tan, 
+    Zhenyu Yu, 
+    Chee Mun Foong, 
     <a href="http://cs-chan.com/" target="_blank">Chee Seng Chan</a> 
 </p>
 
@@ -26,7 +26,7 @@
 
 MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
 <p align="center">
-<img src="imgs/MalayMMLU.png"   width="400" >
+<img src="imgs/MalayMMLU.png"   width="250" >
 </p>
 
 | **Category**   | **Subjects**                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -78,11 +78,19 @@ cd MalayMMLU
 pip install -r requirements.txt
 ```
 # Evaluation
-* <code>SHOT</code> : 0, 1, 2 or 3
-* <code>--by_letter</code> flag for first token evaluation
-* <code>MODEL</code>: LLM's HuggingFace repo id such as <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
-* <code>PRED_FILE</code>: filename of prediction file
+
+We provide example evaluation scripts in <code>scripts</code>
+
 ### Evaluation by first token accuracy
+
+* <code>SHOT</code> : Number of shots 0, 1, 2 or 3
+* <code>--by_letter</code>:
+    * Include this flag for first token accuracy calculation
+
+* <code>MODEL</code>: LLM's HuggingFace repository name.
+    * For example, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
+* <code>PRED_FILE</code>: filename of prediction file
+    * For example, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot_useChatTrue.csv"</code>
 
 ```
 # prediction
@@ -114,7 +122,9 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 # prediction
 python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
-Download the prediction file from [OpenAI platform](https://platform.openai.com/batches)
+* Download the prediction file (<code>jsonl</code> file ) from [OpenAI platform](https://platform.openai.com/batches)
+* Rename the file in following format: <code>MalayMMLU_{$MODEL}_{$SHOT}shot.jsonl</code>
+    * Example: <code>MalayMMLU_gpt3_0shot.jsonl</code>
 ```
 # calculate accurcacy
 python src/calculate_accuracies.py --pred_files $PRED_FILE \

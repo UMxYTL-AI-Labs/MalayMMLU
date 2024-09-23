@@ -200,10 +200,17 @@ def main(pred_files, data_file, output_dir):
                     json.dump(accuracy_info, f, indent=4)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Calculate model prediction accuracy.')
-    parser.add_argument('--pred_files', nargs='+', type=str, required=True, help='List of prediction files.')
+    parser.add_argument('--pred_files', nargs='+', type=str,  help='List of prediction files.')
+    parser.add_argument('--all', action='store_true', help="Calculate accuracy for all prediction files in a directory")
+    parser.add_argument('--pred_dir',type=str, help='Directory containing prediction files. Only provide when include --all flag')
     parser.add_argument('--data_file', type=str, required=True, help='Path to the data file (JSONL).')
-    parser.add_argument('--output_dir', type=str, required=True, help='Directory to save the output JSON file.')
+    parser.add_argument('--output_dir', type=str, required=True, help='Directory to save the accuracy JSON file.')
+    
     
     args = parser.parse_args()
-    main(args.pred_files, args.data_file, args.output_dir)
+    if args.all:
+        pred_files = [ args.pred_dir +"/" + x for x in  os.listdir(args.pred_dir)]
+        main(pred_files, args.data_file, args.output_dir)
+    else:
+        main(args.pred_files, args.data_file, args.output_dir)
 

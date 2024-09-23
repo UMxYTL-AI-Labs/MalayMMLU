@@ -1,13 +1,13 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language
 
 <p align="center"> 
-    <a href="#" target="_blank">Soon Chang Poh</a>, 
-    <a href="#" target="_blank">Sze Jue Yang</a>, 
-    <a href="#" target="_blank">Jeraelyn Ming Li Tan</a>, 
-    <a href="#" target="_blank">Lawrence Leroy Tze Yao Chieng</a>, 
-    <a href="#" target="_blank">Jia Xuan Tan</a>, 
-    <a href="#" target="_blank">Zhenyu Yu</a>, 
-    <a href="#" target="_blank">Chee Mun Foong</a>, 
+    Soon Chang Poh, 
+    Sze Jue Yang 
+    Jeraelyn Ming Li Tan, 
+    Lawrence Leroy Tze Yao Chieng, 
+    Jia Xuan Tan, 
+    Zhenyu Yu, 
+    Chee Mun Foong, 
     <a href="http://cs-chan.com/" target="_blank">Chee Seng Chan</a> 
 </p>
 
@@ -27,7 +27,7 @@
 MalayMMLU ialah penanda aras kefahaman bahasa multitugas (MLU) yang pertama untuk Bahasa Melayu. Penanda aras ini merangkumi 24,213 soalan yang meliputi peringkat pendidikan rendah (Tahun 1-6) dan menengah (Tingkatan 1-5) di Malaysia, yang terdiri daripada 5 topik utama yang terbahagi kepada 22 subjek.
 
 <p align="center">
-<img src="imgs/MalayMMLU.png"   width="400" >
+<img src="imgs/MalayMMLU.png"   width="250" >
 </p>
 
 | **Topik**   | **Subjek**                                                                                                                                                                                                                                                                                                                                                                                 |
