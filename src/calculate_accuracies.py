@@ -2,7 +2,6 @@ import pandas as pd
 import os
 import json
 import argparse
-from tqdm import tqdm
 
 def calculate_accuracy(task,mmlu,filename,keep_idxs=None):
     if task == "MalayMMLU":
@@ -78,9 +77,9 @@ def calculate_accuracy(task,mmlu,filename,keep_idxs=None):
                         correct_full += 1
                 return correct_first/len(keep_idxs)*100, correct_full/len(keep_idxs)*100
 
-def main(pred_files, data_file, output_dir):
+def main(pred_files, shot, output_dir):
     os.makedirs(output_dir, exist_ok=True)
-    mmlu = pd.read_json(data_file)
+    mmlu = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
     
     
 
@@ -102,7 +101,7 @@ def main(pred_files, data_file, output_dir):
                 split = pred_file_str.split("_")
                 models.append(split[2])
                 by_letter.append(split[3])
-                shots.append(split[4])
+                shots.append(split[4].split(".")[0])
                 categories += [cat]
             
             elif "gpt" in pred_file_str:
@@ -203,14 +202,14 @@ if __name__ == "__main__":
     parser.add_argument('--pred_files', nargs='+', type=str,  help='List of prediction files.')
     parser.add_argument('--all', action='store_true', help="Calculate accuracy for all prediction files in a directory")
     parser.add_argument('--pred_dir',type=str, help='Directory containing prediction files. Only provide when include --all flag')
-    parser.add_argument('--data_file', type=str, required=True, help='Path to the data file (JSONL).')
+    parser.add_argument('--shot', type=str, required=True, help='Provide the number of shots: 0,1,2 or 3')
     parser.add_argument('--output_dir', type=str, required=True, help='Directory to save the accuracy JSON file.')
     
     
     args = parser.parse_args()
     if args.all:
         pred_files = [ args.pred_dir +"/" + x for x in  os.listdir(args.pred_dir)]
-        main(pred_files, args.data_file, args.output_dir)
+        main(pred_files, args.shot, args.output_dir)
     else:
-        main(args.pred_files, args.data_file, args.output_dir)
+        main(args.pred_files, args.shot, args.output_dir)
 
