@@ -3,12 +3,13 @@ import pandas as pd
 import os
 from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer, AutoModelForCausalLM
 # vlm
-from transformers import AutoTokenizer, AutoModel,AutoProcessor
+from transformers import Qwen2VLForConditionalGeneration, AutoTokenizer, AutoProcessor
+
 from tqdm import tqdm
 from numpy import argmax
 import torch
-from utils_intern_vl import predict_classification_causal as predict_classification
-from utils_intern_vl import predict_classification_causal_by_letter as predict_classification_by_letter
+from utils_qwen_vl import predict_classification_causal as predict_classification
+from utils_qwen_vl import predict_classification_causal_by_letter as predict_classification_by_letter
 
 device = "cuda"
 # usage: python evaluate.py  --by_letter --shot 0 --task=MalayMMLU --base_model=google/gemma-2b-it --output_folder=$HOME/MalayMMLU/output/  --token $TOKEN
@@ -28,9 +29,8 @@ def prepare_data(playground,model_name, tokenizer,task):
 
 
             p = f"Berikut adalah soalan aneka pilihan tentang {row['subject']}. Sila berikan jawapan sahaja.\n\n" + ques + "\nJawapan:" 
-            # chat = [{"role": "user", "content":[{"type":"text","text": p}]}]
-            # chat = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)                
-            chat = f"""<|im_start|>user\n{p}<|im_end|>\n<|im_start|>assistant\n"""
+            chat = [{"role": "user", "content":[{"type":"text","text": p}]}]
+            chat = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)                
             inputs.append(chat)
 
             idx_label = key2id[row['key']]
@@ -82,12 +82,16 @@ def main():
 
     os.makedirs(args.output_folder, exist_ok=True)
         
+    # tokenizer_class = LlamaTokenizer if ('llama' in args.base_model and ("Llama-3" not in args.base_model and "Llama-2" not in args.base_model)) else AutoTokenizer
+    
+    # model_class = LlamaForCausalLM if ('llama' in args.base_model and ("Llama-3" not in args.base_model and "Llama-2" not in args.base_model)) else AutoModelForCausalLM
 
-    model_class = AutoModel
+    model_class = Qwen2VLForConditionalGeneration
     SAVE_FILE = f'{args.output_folder}/{args.task}_result_{args.base_model.split("/")[-1]}_{args.by_letter}_{args.shot}shot.csv'
-    processor = AutoTokenizer.from_pretrained(args.base_model, trust_remote_code=True)
-  
-    model = model_class.from_pretrained(args.base_model, use_flash_attn=True, trust_remote_code=True, token=args.token, torch_dtype=torch.float16, device_map= "auto")
+    processor = AutoProcessor.from_pretrained(args.base_model)
+    # tokenizer = tokenizer_class.from_pretrained(args.base_model,token=args.token,trust_remote_code=True)
+    
+    model = model_class.from_pretrained(args.base_model, token=args.token, torch_dtype=torch.float16, trust_remote_code=True, device_map= "auto")
 
     model.eval()
 

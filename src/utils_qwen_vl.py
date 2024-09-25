@@ -12,9 +12,9 @@ def softmax(x):
 
 
 @torch.no_grad()
-def get_logprobs_causal(model, tokenizer, prompt, device):
+def get_logprobs_causal(model, processor, prompt, device):
     torch.manual_seed(42)
-    inputs = tokenizer(prompt, return_tensors="pt")
+    inputs = processor(text=[prompt], return_tensors="pt")
     if model.config.model_type == 'falcon':
         inputs.pop("token_type_ids")
         
@@ -29,17 +29,23 @@ def get_logprobs_causal(model, tokenizer, prompt, device):
     
     return logprobs.mean()
 
-def predict_classification_causal(model, tokenizer, input_text, labels, device):
+def predict_classification_causal(model, processor, input_text, labels, device):
     torch.manual_seed(42)
-    probs = [get_logprobs_causal(model, tokenizer, input_text+label, device) for label in labels]
+    probs = [get_logprobs_causal(model, processor, input_text+label, device) for label in labels]
     return probs
 
-def predict_classification_causal_by_letter(model, tokenizer, input_text, labels, device):
+def predict_classification_causal_by_letter(model, processor, input_text, labels, device):
     torch.manual_seed(42)
     choices = ['A', 'B', 'C', 'D', 'E'][:len(labels)]
-    choice_ids = [tokenizer.encode(choice)[-1] for choice in choices]
+    #choice_ids = [processor(text=[choice])[-1] for choice in choices]
+    
+    choice_ids = []
+    for choice in choices:
+        choice_id = processor(text=[choice])['input_ids'][0][0]
+        choice_ids.append(choice_id)
+
     with torch.no_grad():
-        inputs = tokenizer(input_text, return_tensors="pt")
+        inputs = processor(text=[input_text], return_tensors="pt")
         input_ids = inputs["input_ids"].to(device)
         if model.config.model_type == 'falcon':
             inputs.pop("token_type_ids")
