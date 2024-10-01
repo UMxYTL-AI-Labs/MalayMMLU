@@ -520,7 +520,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
         </tr>
     </tbody>
 </table>
-Markah tertinggi ditandakan dengan tebal dan markah kedua tertinggi <ins>digariskan</ins>. 
+Markah tertinggi telah <strong>ditebalkan</strong> dan markah kedua tertinggi telah <ins>digariskan</ins>. 
 † menunjukkan LLM yang dilatih dengan dataset Asia Tenggara.
 †† menunjukkan GLM-4 sumber terbuka.
 
