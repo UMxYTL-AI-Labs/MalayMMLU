@@ -538,22 +538,60 @@ pip install -r requirements.txt
 ```
 ## Penilaian
 
-Contoh skrip penilaian tersedia di <code>scripts</code>
-#### Penilaian berdasarkan ketepatan token pertama
-
-* <code>SHOT</code> : Nombor untuk shot 0, 1, 2 or 3
-* <code>--by_letter</code>:
-    * Sertakan flag ini untuk mengira ketepatan token pertama
-* <code>MODEL</code>: Nama repositori HuggingFace untuk LLM.
-    * Contohnya, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
-* <code>PRED_FILE</code>: Nama fail ramalan
-    * Contohnya, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
+Kami menyediakan contoh skrip penilaian di <code>scripts</code>
 
 ```
+usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
+options:
+  -h, --help            show this help message and exit
+  --by_letter           Use this flag to calculate first token accuracy
+  --base_model BASE_MODEL
+                        Path to pretrained model
+  --output_folder OUTPUT_FOLDER
+                        Folder where the output will be saved
+  --playground PLAYGROUND
+                        Set this to True to enable playground mode (default: False).
+  --task TASK           Specify the task to be executed (default: 'MalayMMLU').
+  --shot SHOT           Specify the number of shots (default: 0).
+  --token TOKEN         Specify the HuggingFace token
+```
+#### Penilaian berdasarkan ketepatan token pertama
+
+* <code>PRED_FILE</code>: nama fail ramalan
+    * Contoh, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
+
+```
+SHOT=0
 # ramalan
 python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
-                    --base_model=$MODEL  \
+                    --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=output/ --token $TOKEN
+
+# pengiraan ketepatan
+PRED_FILE=output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv
+
+python src/calculate_accuracies.py --pred_files $PRED_FILE \
+    --data_file=$SHOT \
+    --output_dir=output/
+
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
+
+PRED_DIR=output/
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=results/
+```
+
+
+#### Penilaian berdasarkan ketepatan jawapan penuh untuk LLM
+```
+# ramalan
+python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
+                    --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
+                    --output_folder=output/ --token $TOKEN
+
+# pengiraan ketepatan                  
+PRED_FILE=output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_False_0shot.csv
 
 # pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
@@ -561,48 +599,16 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --output_dir=output/
 
 # Pengiraan ketepatan untuk semua fail ramalan dalam folder
-python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
-    --shot=$SHOT \
-    --output_dir=output/
-```
-#### Penilaian berdasarkan ketepatan jawapan penuh
-```
-python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
-                    --base_model=$MODEL  \
-                    --output_folder=output/ --token $TOKEN
 
-python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --shot=$SHOT \
-    --output_dir=output/
+PRED_DIR=output/
 
-# Pengiraan ketepatan untuk semua fail ramalan dalam folder
 python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/
 ```
 
-#### Penilaian untuk GPT
-
-* <code>API_KEY</code>: Kunci API untuk OpenAI
-```
-# Ramalan
-python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
-```
-* Muat turun fail ramalan (fail <code>jsonl</code>) daripada [OpenAI platform](https://platform.openai.com/batches)
-* Namakan fail mengikut format berikutnya: <code>MalayMMLU_{$MODEL}_{$SHOT}shot.jsonl</code>
-    * Contoh: <code>MalayMMLU_gpt3_0shot.jsonl</code>
-```
-# Pengiraan ketepatan
-python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --data_file=$SHOT \
-    --output_dir=output/ --closed
-
-# Pengiraan ketepatan untuk semua fail ramalan dalam folder
-python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
-    --shot=$SHOT \
-    --output_dir=output/ --closed
-```
-
+#### Penilaian untuk LVLM
+Langkah dan cara yang sama untuk  <code>evaluate_pixtral.py, evaluate_qwen_vl.py, evaluate_intern_vl.py</code>
 ## Rujukan
 
 ```bibtex

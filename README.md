@@ -539,50 +539,74 @@ pip install -r requirements.txt
 
 We provide example evaluation scripts in <code>scripts</code>
 
-#### Evaluation by first token accuracy
+```
+usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
+options:
+  -h, --help            show this help message and exit
+  --by_letter           Use this flag to calculate first token accuracy
+  --base_model BASE_MODEL
+                        Path to pretrained model
+  --output_folder OUTPUT_FOLDER
+                        Folder where the output will be saved
+  --playground PLAYGROUND
+                        Set this to True to enable playground mode (default: False).
+  --task TASK           Specify the task to be executed (default: 'MalayMMLU').
+  --shot SHOT           Specify the number of shots (default: 0).
+  --token TOKEN         Specify the HuggingFace token
+```
+#### Evaluation by first token accuracy for LLM
 
-* <code>SHOT</code> : Number of shots 0, 1, 2 or 3
-* <code>--by_letter</code>:
-    * Include this flag for first token accuracy calculation
-
-* <code>MODEL</code>: LLM's HuggingFace repository name.
-    * For example, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
 * <code>PRED_FILE</code>: filename of prediction file
     * For example, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
 
 ```
+SHOT=0
 # prediction
 python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
-                    --base_model=$MODEL  \
+                    --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=output/ --token $TOKEN
 
 # calculate accuracy
+PRED_FILE=output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv
+
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
 
 # calculate accuracy for all prediction files in a folder
+
+PRED_DIR=output/
 python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
-    --output_dir=output/
+    --output_dir=results/
 ```
-#### Evaluation by full answer probability
+
+
+#### Evaluation by full answer probability for LLM
 ```
+# calculate accuracy
 python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
-                    --base_model=$MODEL  \
+                    --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=output/ --token $TOKEN
+
+# calculate accuracy                  
+PRED_FILE=output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_False_0shot.csv
 
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
 # calculate accuracy for all prediction files in a folder
+PRED_DIR=output/
+
 python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/
 ```
 
-#### Evaluation for GPT
+#### Evaluation for LVLM
+The steps and usage are similar for <code>evaluate_pixtral.py, evaluate_qwen_vl.py, evaluate_intern_vl.py</code>
+#### Evaluation for Closed Source Models
 
 * <code>API_KEY</code>: OpenAI API key
 ```
@@ -603,7 +627,7 @@ python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/ --closed
 ```
-
+The steps and usage are similar for <code>evaluate_glm.py
 ## Citation
 
 ```bibtex
