@@ -597,7 +597,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
-# Pengiraan ketepatan untuk semua fail-fail ramalan dalam folder
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
 
 PRED_DIR=output/
 
@@ -625,7 +625,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/ --closed
 
-# Pengiraan ketepatan untuk semua fail-fail ramalan dalam folder
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
 python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/ --closed
