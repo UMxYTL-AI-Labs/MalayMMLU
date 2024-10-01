@@ -29,9 +29,9 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 | **Lain-lain**     | Kemahiran Hidup (Rendah, Menengah), Prinsip Perakaunan (Menengah), Ekonomi (Menengah), Perniagaan (Menengah), Pertanian (Menengah)                                                                                                                                                                                                                                                  |
 | **Kemanusiaan** | Pendidikan Al Quran dan Al Sunnah (Menengah), Pendidikan Islam (Rendah, Menengah), Pengetahuan Sains Sukan (Menengah)  |             
 
-# Keputusan
+## Keputusan
 
-### Keputusan Penilaian Zero-shot untuk MalayMMLU (Ketepatan token pertama)
+#### Keputusan Penilaian Zero-shot untuk MalayMMLU (Ketepatan token pertama)
 
 | **Model**               | **Bahasa** | **Kemanusiaan** | **STEM** | **Sains Sosial** | **Lain-lain** | **Purata** |
 |-------------------------|-------------------|---------------------|---------------|-------------------------|-----------------|------------------|
