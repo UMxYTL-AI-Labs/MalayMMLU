@@ -27,7 +27,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 | **Bahasa**   | Bahasa Melayu (Rendah, Menengah)                                                                                                                                                                                                                                                                                                                                                          |
 | **Sains Sosial** | Geografi (Menengah), Kajian Tempatan (Rendah), Sejarah (Rendah, Menengah)                                                                                                                                                                                                                                                                                                               |
 | **Lain-lain**     | Kemahiran Hidup (Rendah, Menengah), Prinsip Perakaunan (Menengah), Ekonomi (Menengah), Perniagaan (Menengah), Pertanian (Menengah)                                                                                                                                                                                                                                                  |
-| **Kemanusiaan** | Quran and Sunnah (Menengah), Islam (Rendah, Menengah), Pengetahuan Sains Sukan (Menengah)  |             
+| **Kemanusiaan** | Pendidikan Al Quran dan Al Sunnah (Menengah), Pendidikan Islam (Rendah, Menengah), Pengetahuan Sains Sukan (Menengah)  |             
 
 # Keputusan
 
