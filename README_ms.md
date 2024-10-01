@@ -547,7 +547,7 @@ Contoh skrip penilaian tersedia di <code>scripts</code>
 * <code>MODEL</code>: Nama repositori HuggingFace untuk LLM.
     * Contohnya, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
 * <code>PRED_FILE</code>: Nama fail ramalan
-    *Contohnya, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
+    * Contohnya, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
 
 ```
 # ramalan
