@@ -126,7 +126,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 ```
 
 # Maklumbalas 
-Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hubungi dengan menghantar emel ke cs.chan di um.edu.my.
+Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hubungi dengan menghantar emel ke `cs.chan di um.edu.my`.
 
 # Penghargaan
 
