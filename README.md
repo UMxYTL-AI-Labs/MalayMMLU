@@ -560,6 +560,10 @@ python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
+
+python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/
 ```
 #### Evaluation by full answer probability
 ```
@@ -571,6 +575,9 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
+python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/
 ```
 
 #### Evaluation for GPT
@@ -587,7 +594,12 @@ python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 # calculate accurcacy
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
-    --output_dir=output/ --closed 
+    --output_dir=output/ --closed
+
+# calculate accuracy for all prediction files in a folder
+python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/ --closed
 ```
 
 ## Citation
