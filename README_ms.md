@@ -584,9 +584,9 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```bibtex
 @InProceedings{MalayMMLU2024,
-    author    = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng },
+    author    = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng},
     title     = {MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language},
-    booktitle = {Empirical Methods in Natural Language Processing (EMNLP)},
+    booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2024},
     month     = {November},
     year      = {2024},
 }
