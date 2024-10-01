@@ -11,7 +11,6 @@ from utils_intern_vl import predict_classification_causal as predict_classificat
 from utils_intern_vl import predict_classification_causal_by_letter as predict_classification_by_letter
 
 device = "cuda"
-# usage: python evaluate.py  --by_letter --shot 0 --task=MalayMMLU --base_model=google/gemma-2b-it --output_folder=$HOME/MalayMMLU/output/  --token $TOKEN
 
 def prepare_data(playground,model_name, tokenizer,task):
     if task=="MalayMMLU":
@@ -27,9 +26,7 @@ def prepare_data(playground,model_name, tokenizer,task):
             ques =  data.iloc[idx]['prompt']
 
 
-            p = f"Berikut adalah soalan aneka pilihan tentang {row['subject']}. Sila berikan jawapan sahaja.\n\n" + ques + "\nJawapan:" 
-            # chat = [{"role": "user", "content":[{"type":"text","text": p}]}]
-            # chat = tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)                
+            p = f"Berikut adalah soalan aneka pilihan tentang {row['subject']}. Sila berikan jawapan sahaja.\n\n" + ques + "\nJawapan:"             
             chat = f"""<|im_start|>user\n{p}<|im_end|>\n<|im_start|>assistant\n"""
             inputs.append(chat)
 
@@ -66,13 +63,33 @@ def prepare_data_few_shot(shot, model_name, tokenizer,task):
             
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--by_letter", action='store_true')
-    parser.add_argument("--base_model", type=str, help="Path to pretrained model", required=True)
-    parser.add_argument("--output_folder", type=str, default="output", required=True)
-    parser.add_argument("--playground", type=bool,default=False)
-    parser.add_argument("--task",type=str, default="MalayMMLU")
-    parser.add_argument("--shot",type=int, default=0)
-    parser.add_argument("--token",type=str)
+    parser.add_argument("--by_letter", 
+                        action='store_true', 
+                        help="Use this flag to calculate first token accuracy")
+    parser.add_argument("--base_model",
+                         type=str, 
+                         help="Path to pretrained model", 
+                         required=True)
+    parser.add_argument("--output_folder", 
+                        type=str, 
+                        default="output",
+                        required=True,
+                        help="Folder where the output will be saved")
+    parser.add_argument("--playground", 
+                        type=bool,
+                        default=False,
+                        help="Set this to True to enable playground mode (default: False).")
+    parser.add_argument("--task",
+                        type=str, 
+                        default="MalayMMLU",
+                        help="Specify the task to be executed (default: 'MalayMMLU').")
+    parser.add_argument("--shot",
+                        type=int, 
+                        default=0,
+                        help="Specify the number of shots (default: 0).")
+    parser.add_argument("--token",
+                        type=str,
+                        help='Specify the HuggingFace token')
     args = parser.parse_args()
     return args
 

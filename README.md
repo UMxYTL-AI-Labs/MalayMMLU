@@ -548,11 +548,11 @@ We provide example evaluation scripts in <code>scripts</code>
 * <code>MODEL</code>: LLM's HuggingFace repository name.
     * For example, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
 * <code>PRED_FILE</code>: filename of prediction file
-    * For example, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot_useChatTrue.csv"</code>
+    * For example, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
 
 ```
 # prediction
-python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --task=MalayMMLU \
+python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
                     --base_model=$MODEL  \
                     --output_folder=output/ --token $TOKEN
 
@@ -563,12 +563,12 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 ```
 #### Evaluation by full answer probability
 ```
-python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
+python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
                     --base_model=$MODEL  \
                     --output_folder=output/ --token $TOKEN
 
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --data_file=$SHOT \
+    --shot=$SHOT \
     --output_dir=output/
 
 ```
@@ -586,8 +586,8 @@ python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
 # calculate accurcacy
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --data_file=$SHOT \
-    --output_dir=output/
+    --shot=$SHOT \
+    --output_dir=output/ --closed 
 ```
 
 ## Citation

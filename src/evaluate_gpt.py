@@ -69,8 +69,8 @@ def main(api_key, model,shot):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Benchmarking MalayMMLU on GPT")
-    parser.add_argument("--model",required=True, type=str, help="GPT models", default="gpt-3.5-turbo")
-    parser.add_argument("--api_key", required=True, help="OpenAI API Key")
+    parser.add_argument("--model",required=True, type=str, help="Model name of the GPT models.", default="gpt-3.5-turbo")
+    parser.add_argument("--api_key", required=True, help="OpenAI API Key", help='Provide the number of shots: 0,1,2 or 3')
     parser.add_argument("--shot",type=int, default=0)
     
     args = parser.parse_args()

@@ -6,7 +6,7 @@ import argparse
 def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
     if task == "MalayMMLU":
         if keep_idxs == None:
-            if closed_flag: #elif "gpt" in filename or "glm" in filename:
+            if closed_flag:
                 result = pd.read_json(filename, lines=True)
                 correct_first = 0
                 correct_full = 0
@@ -20,13 +20,12 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
                             correct_full += 1
                 return correct_first/len(mmlu)*100, correct_full/len(mmlu)*100
             
-            else: #if 'gpt' not in filename:
+            else: 
                 
                 result = pd.read_csv(filename)
                 
                 split = filename.split("_") 
                 by_letter = split[3]
-            
                 if by_letter == "True":
             
                     correct_org = 0
@@ -46,7 +45,7 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
                     return  correct_org/len(mmlu)*100
 
         else:
-            if closed_flag: #elif "gpt" in filename:
+            if closed_flag: 
                 print(filename)
                 result = pd.read_json(filename, lines=True)
                 correct_first = 0
@@ -63,7 +62,7 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
                             correct_full += 1
                 return correct_first/len(keep_idxs)*100, correct_full/len(keep_idxs)*100
             
-            else: #if 'gpt' not in filename:
+            else: 
                 
                 result = pd.read_csv(filename)
                 
@@ -92,10 +91,12 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
 def main(pred_files, shot, output_dir,closed_flag):
     os.makedirs(output_dir, exist_ok=True)
     mmlu = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
+    print("loaded data")
     
     
 
     for pred_file_str in pred_files:
+        
         org_accs = []
         accs = []
         models = []
@@ -106,7 +107,7 @@ def main(pred_files, shot, output_dir,closed_flag):
         for cat in mmlu.category.unique():
             keep_ids = list(mmlu[mmlu.category == cat].index)
 
-            if closed_flag: #"gpt" in pred_file_str:
+            if closed_flag: 
                 first_acc, full_acc = calculate_accuracy("MalayMMLU", mmlu, pred_file_str, closed_flag, keep_ids)
                 split = pred_file_str.split("_")
                 models += [split[1], split[1]]
@@ -115,7 +116,7 @@ def main(pred_files, shot, output_dir,closed_flag):
                 org_accs += [first_acc, full_acc]
 
                 categories += [cat] * 2            
-            else: #elif "gpt" not in pred_file_str:
+            else: 
                 org_acc = calculate_accuracy("MalayMMLU", mmlu, pred_file_str,  closed_flag, keep_ids)
                 org_accs.append(org_acc)
                 
@@ -124,9 +125,9 @@ def main(pred_files, shot, output_dir,closed_flag):
                 by_letter.append(split[3])
                 shots.append(split[4].split(".")[0])
                 categories += [cat]
-            
 
-        if closed_flag: #else:
+
+        if closed_flag: 
             for exp in ["first","full"]:
                 # Append results for the current prediction file
                 df = pd.DataFrame({
@@ -172,7 +173,7 @@ def main(pred_files, shot, output_dir,closed_flag):
                 with open(output_file, "w") as f:
                     json.dump(accuracy_info, f, indent=4)
 
-        else:#if "gpt" not in pred_file_str:
+        else:
             # Append results for the current prediction file
             df = pd.DataFrame({
                 "Model": models,
@@ -215,7 +216,7 @@ def main(pred_files, shot, output_dir,closed_flag):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Calculate model prediction accuracy.')
-    parser.add_argument('--pred_files', nargs='+', type=str,  help='List of prediction files.')
+    parser.add_argument('--pred_files', nargs='+', type=str,  help='List of prediction files. Example: "file1.csv"  "file2.csv"')
     parser.add_argument('--all', action='store_true', help="Flag for calculate accuracy for all prediction files in a directory")
     parser.add_argument('--closed', action='store_true', help="Flag for closed source model. The prediction file should have a suffix 'closed'")
     parser.add_argument('--pred_dir',type=str, help='Directory containing prediction files. Only provide when include --all flag')

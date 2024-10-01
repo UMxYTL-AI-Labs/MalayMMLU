@@ -537,47 +537,56 @@ cd MalayMMLU
 pip install -r requirements.txt
 ```
 ## Penilaian
-* <code>SHOT</code> : 0, 1, 2 atau 3
-* <code>--by_letter</code> flag untuk penilaian token pertama
-* <code>MODEL</code>: LLM's HuggingFace repo id seperti <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
-* <code>PRED_FILE</code>: nama fail ramalan
+
+Contoh skrip penilaian tersedia di <code>scripts</code>
 #### Penilaian berdasarkan ketepatan token pertama
+
+* <code>SHOT</code> : Nombor untuk shot 0, 1, 2 or 3
+* <code>--by_letter</code>:
+    * Sertakan flag ini untuk mengira ketepatan token pertama
+* <code>MODEL</code>: Nama repositori HuggingFace untuk LLM.
+    * Contohnya, <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
+* <code>PRED_FILE</code>: Nama fail ramalan
+    *Contohnya, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
+
 ```
-# prediction
-python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --task=MalayMMLU \
+# ramalan
+python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
                     --base_model=$MODEL  \
                     --output_folder=output/ --token $TOKEN
 
-# calculate accuracy
+# pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --data_file=$SHOT \
+    --shot=$SHOT \
     --output_dir=output/
 ```
 #### Penilaian berdasarkan ketepatan jawapan penuh
 ```
-python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
+python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
                     --base_model=$MODEL  \
                     --output_folder=output/ --token $TOKEN
 
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
-    --data_file=$SHOT \
+    --shot=$SHOT \
     --output_dir=output/
 
 ```
 
 #### Penilaian untuk GPT
 
-* <code>API_KEY</code>: OpenAI API key
+* <code>API_KEY</code>: Kunci API untuk OpenAI
 ```
-# prediction
+# Ramalan
 python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
-Muat turun fail ramalan dari [OpenAI platform](https://platform.openai.com/batches)
+* Muat turun fail ramalan (fail <code>jsonl</code>) daripada [OpenAI platform](https://platform.openai.com/batches)
+* Namakan fail mengikut format berikutnya: <code>MalayMMLU_{$MODEL}_{$SHOT}shot.jsonl</code>
+    * Example: <code>MalayMMLU_gpt3_0shot.jsonl</code>
 ```
-# calculate accurcacy
+# Pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
-    --output_dir=output/
+    --output_dir=output/ --closed 
 ```
 
 ## Rujukan

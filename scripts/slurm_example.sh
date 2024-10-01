@@ -88,7 +88,7 @@ python src/evaluate.py  --by_letter --shot $SHOT --task=MalayMMLU \
                     --output_folder=output/ --token $TOKEN
 
 python src/calculate_accuracies.py --all --pred_dir output/$SHOT/ \
-		--data_file=data/MalayMMLU_${SHOT}shot.json \
+		--shot $SHOT \
 		--output_dir=results/$SHOT/
 
 # full answer accuracy
@@ -160,5 +160,5 @@ python src/evaluate.py  --shot $SHOT --task=MalayMMLU \
                     --output_folder=output/ --token $TOKEN
 
 python src/calculate_accuracies.py --all --pred_dir output/$SHOT/ \
-		--data_file=data/MalayMMLU_${SHOT}shot.json \
+		--shot $SHOT \
 		--output_dir=results/$SHOT/
