@@ -53,7 +53,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
     <tbody>
         <tr>
             <td></td>
-            <td>Random</td>
+            <td>Rawak</td>
             <td></td>
             <td>38.01</td>
             <td>42.09</td>
