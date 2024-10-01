@@ -15,7 +15,7 @@ Dilancarkan pada 27 September 2024
 
 # Pengenalan
 
-MalayMMLU ialah penanda aras kefahaman bahasa multitugas (MLU) yang pertama untuk Bahasa Melayu. Penanda aras ini merangkumi 24,213 soalan yang meliputi peringkat pendidikan rendah (Tahun 1-6) dan menengah (Tingkatan 1-5) di Malaysia, yang terdiri daripada 5 topik utama yang terbahagi kepada 22 subjek.
+MalayMMLU ialah penanda aras kefahaman bahasa pelbagai tugas (Massive Multitask Language Understanding (MMLU) dalam Bahasa Inggeris) pertama untuk Bahasa Melayu. Penanda aras ini merangkumi 24,213 soalan yang meliputi peringkat pendidikan rendah (Tahun 1-6) dan menengah (Tingkatan 1-5) di Malaysia, terdiri daripada 5 topik utama yang dibahagikan kepada 22 subjek.
 
 <p align="center">
 <img src="imgs/MalayMMLU.png"   width="250" >
