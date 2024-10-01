@@ -540,21 +540,7 @@ pip install -r requirements.txt
 
 Kami menyediakan contoh skrip penilaian di <code>scripts</code>
 
-```
-usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
-options:
-  -h, --help            show this help message and exit
-  --by_letter           Use this flag to calculate first token accuracy
-  --base_model BASE_MODEL
-                        Path to pretrained model
-  --output_folder OUTPUT_FOLDER
-                        Folder where the output will be saved
-  --playground PLAYGROUND
-                        Set this to True to enable playground mode (default: False).
-  --task TASK           Specify the task to be executed (default: 'MalayMMLU').
-  --shot SHOT           Specify the number of shots (default: 0).
-  --token TOKEN         Specify the HuggingFace token
-```
+
 #### Penilaian berdasarkan ketepatan token pertama
 
 * <code>PRED_FILE</code>: nama fail ramalan
