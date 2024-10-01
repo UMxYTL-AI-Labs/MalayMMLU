@@ -125,9 +125,9 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 }
 ```
 
-# Maklumbalas 
+## Maklumbalas 
 Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hubungi dengan menghantar emel ke `cs.chan di um.edu.my`.
 
-# Penghargaan
+## Penghargaan
 
 Kod ini dibina atas [IndoMMLU](https://github.com/fajri91/IndoMMLU)
