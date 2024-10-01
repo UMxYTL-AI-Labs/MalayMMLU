@@ -33,29 +33,496 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 
 #### Keputusan Penilaian Zero-shot untuk MalayMMLU (Ketepatan token pertama)
 
-| **Model**               | **Bahasa** | **Kemanusiaan** | **STEM** | **Sains Sosial** | **Lain-lain** | **Purata** |
-|-------------------------|-------------------|---------------------|---------------|-------------------------|-----------------|------------------|
-| Random                  | 38.01             | 42.09               | 36.31         | 36.01                   | 38.07           | 38.02            |
-| GPT-4                   | **82.90**         | **83.91**           | **78.80**     | **77.29**               | **77.33**       | **80.11**        |
-| GPT-3.5                 | 69.62             | 71.01             | 67.17       | 66.70                 | 63.73         | 67.78          |
-| [LLaMA-3 (8B)](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)            | 63.93             | 66.21               | 62.26         | 62.97                   | 61.38           | 63.46            |
-| [LLaMA-2 (13B)](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)           | 45.58             | 50.72               | 44.13         | 44.55                   | 40.87           | 45.26            |
-| [LLaMA-2 (7B)](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)           | 47.47             | 52.74               | 48.71         | 50.72                   | 48.19           | 49.61            |
-| [Mistral-v0.3 (7B)](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)       | 56.97             | 59.29               | 57.14         | 58.28                   | 56.56           | 57.71            |
-| [Mistral-v0.2 (7B)](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)       | 56.23             | 59.86               | 57.10         | 56.65                   | 55.22           | 56.92            |
-| [Sailor (7B)](https://huggingface.co/sail/Sailor-7B-Chat)   | 74.54           | 68.62               | 62.79         | 64.69                   | 63.61           | 67.58            |
-| [SeaLLM-v2.5 (7B)](https://huggingface.co/SeaLLMs/SeaLLM-7B-v2.5)   | 69.75             | 67.94               | 65.29         | 62.66                   | 63.61           | 65.89            |
-| [Phi-3 (14B)](https://huggingface.co/microsoft/Phi-3-medium-4k-instruct)             | 60.07             | 58.89               | 60.91         | 58.73                   | 55.24           | 58.72            |
-| [Phi-3 (3.8B)](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct)            | 52.24             | 55.52               | 54.81         | 53.70                   | 51.74           | 53.43            |
-| [GLM-4 (9B)](https://huggingface.co/THUDM/glm-4-9b-chat)              | 58.51             | 60.48               | 56.32         | 55.04                   | 53.97           | 56.87            |
-| [Qwen-1.5 (7B)](https://huggingface.co/Qwen/Qwen1.5-7B-Chat)           | 60.13             | 59.14               | 58.62         | 54.26                   | 54.67           | 57.18            |
-| [Qwen-1.5 (4B)](https://huggingface.co/Qwen/Qwen1.5-4B-Chat)           | 48.39             | 52.01               | 51.37         | 50.00                   | 49.10           | 49.93            |
-| [Qwen-1.5 (1.8B)](https://huggingface.co/Qwen/Qwen1.5-1.8B-Chat)         | 42.70             | 43.37               | 43.68         | 43.12                   | 44.42           | 43.34            |
-| [Gemma (7B)](https://huggingface.co/google/gemma-7b-it)              | 45.53             | 50.92               | 46.13         | 47.33                   | 46.27           | 47.21            |
-| [Gemma (2B)](https://huggingface.co/google/gemma-2b-it)              | 46.50             | 51.15               | 49.20         | 48.06                   | 48.79           | 48.46            |
-| [Baichuan-2 (7B)](https://huggingface.co/baichuan-inc/Baichuan2-7B-Chat)         | 40.41             | 47.35               | 44.37         | 46.33                   | 43.54           | 44.30            |
-| [Komodo (7B)](https://huggingface.co/Yellow-AI-NLP/komodo-7b-base)   | 43.62             | 45.53               | 39.34         | 39.75                   | 39.48           | 41.72            |
-| [MaLLaM-v2 (5B)](https://huggingface.co/mesolitica/mallam-5b-20k-instructions-v2)| 42.56             | 46.42               | 42.16         | 40.81                   | 38.81           | 42.07            |
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Organisasi</th>
+            <th rowspan="2">Model</th>
+            <th rowspan="2">Penglihatan</th>
+            <th colspan="7">Ketepatan</th>
+        </tr>
+        <tr>
+            <th>Bahasa</th>
+            <th>Kemanusiaan</th>
+            <th>STEM</th>
+            <th>Sains Sosial</th>
+            <th>Lain-lain</th>
+            <th>Purata</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td>Random</td>
+            <td></td>
+            <td>38.01</td>
+            <td>42.09</td>
+            <td>36.31</td>
+            <td>36.01</td>
+            <td>38.07</td>
+            <td>38.02</td>
+        </tr>
+        <tr>
+            <td rowspan="4">OpenAI</td>
+            <td>GPT-4o</td>
+            <td>✔</td>
+            <td><strong>87.12</strong></td>
+            <td><strong>88.12</strong></td>
+            <td><strong>83.83</strong></td>
+            <td><strong>82.58</strong></td>
+            <td><strong>83.09</strong></td>
+            <td><strong>84.98</strong></td>
+        </tr>
+        <tr>
+            <td>GPT-4</td>
+            <td>✔</td>
+            <td><ins>82.90</ins></td>
+            <td><ins>83.91</ins></td>
+            <td>78.80</td>
+            <td><ins>77.29</ins></td>
+            <td><ins>77.33</ins></td>
+            <td><ins>80.11</ins></td>
+        </tr>
+        <tr>
+            <td>GPT-4o mini</td>
+            <td>✔</td>
+            <td>82.03</td>
+            <td>81.50</td>
+            <td>78.51</td>
+            <td>75.67</td>
+            <td>76.30</td>
+            <td>78.78</td>
+        </tr>
+        <tr>
+            <td>GPT-3.5</td>
+            <td></td>
+            <td>69.62</td>
+            <td>71.01</td>
+            <td>67.17</td>
+            <td>66.70</td>
+            <td>63.73</td>
+            <td>67.78</td>
+        </tr>
+        <tr>
+            <td rowspan="7">Meta</td>
+            <td>LLaMA-3.1 (70B)</td>
+            <td></td>
+            <td>78.75</td>
+            <td>82.59</td>
+            <td>78.96</td>
+            <td>77.20</td>
+            <td>75.32</td>
+            <td>78.44</td>
+        </tr>
+        <tr>
+            <td>LLaMA-3.1 (8B)</td>
+            <td></td>
+            <td>65.47</td>
+            <td>67.17</td>
+            <td>64.10</td>
+            <td>62.59</td>
+            <td>62.13</td>
+            <td>64.24</td>
+        </tr>
+        <tr>
+            <td>LLaMA-3 (8B)</td>
+            <td></td>
+            <td>63.93</td>
+            <td>66.21</td>
+            <td>62.26</td>
+            <td>62.97</td>
+            <td>61.38</td>
+            <td>63.46</td>
+        </tr>
+        <tr>
+            <td>LLaMA-2 (13B)</td>
+            <td></td>
+            <td>45.58</td>
+            <td>50.72</td>
+            <td>44.13</td>
+            <td>44.55</td>
+            <td>40.87</td>
+            <td>45.26</td>
+        </tr>
+        <tr>
+            <td>LLaMA-2 (7B)</td>
+            <td></td>
+            <td>47.47</td>
+            <td>52.74</td>
+            <td>48.71</td>
+            <td>50.72</td>
+            <td>48.19</td>
+            <td>49.61</td>
+        </tr>
+        <tr>
+            <td>LLaMA-3.2 (3B)</td>
+            <td></td>
+            <td>58.52</td>
+            <td>60.66</td>
+            <td>56.65</td>
+            <td>54.06</td>
+            <td>52.75</td>
+            <td>56.45</td>
+        </tr>
+        <tr>
+            <td>LLaMA-3.2 (1B)</td>
+            <td></td>
+            <td>38.88</td>
+            <td>43.30</td>
+            <td>40.65</td>
+            <td>40.56</td>
+            <td>39.55</td>
+            <td>40.46</td>
+        </tr>
+        <tr>
+            <td rowspan="8">Qwen (Alibaba)</td>
+            <td>Qwen 2.5 (72B)</td>
+            <td></td>
+            <td>79.09</td>
+            <td>79.95</td>
+            <td><ins>80.88</ins></td>
+            <td>75.80</td>
+            <td>75.05</td>
+            <td>77.79</td>
+        </tr>
+        <tr>
+            <td>Qwen-2.5 (32B)</td>
+            <td></td>
+            <td>76.96</td>
+            <td>76.70</td>
+            <td>79.74</td>
+            <td>72.35</td>
+            <td>70.88</td>
+            <td>74.83</td>
+        </tr>
+        <tr>
+            <td>Qwen-2-VL (7B)</td>
+            <td>✔</td>
+            <td>68.16</td>
+            <td>63.62</td>
+            <td>67.58</td>
+            <td>60.38</td>
+            <td>59.08</td>
+            <td>63.49</td>
+        </tr>
+        <tr>
+            <td>Qwen-2-VL (2B)</td>
+            <td>✔</td>
+            <td>58.22</td>
+            <td>55.56</td>
+            <td>57.51</td>
+            <td>53.67</td>
+            <td>55.10</td>
+            <td>55.83</td>
+        </tr>
+        <tr>
+            <td>Qwen-1.5 (14B)</td>
+            <td></td>
+            <td>64.47</td>
+            <td>60.64</td>
+            <td>61.97</td>
+            <td>57.66</td>
+            <td>58.05</td>
+            <td>60.47</td>
+        </tr>
+        <tr>
+            <td>Qwen-1.5 (7B)</td>
+            <td></td>
+            <td>60.13</td>
+            <td>59.14</td>
+            <td>58.62</td>
+            <td>54.26</td>
+            <td>54.67</td>
+            <td>57.18</td>
+        </tr>
+        <tr>
+            <td>Qwen-1.5 (4B)</td>
+            <td></td>
+            <td>48.39</td>
+            <td>52.01</td>
+            <td>51.37</td>
+            <td>50.00</td>
+            <td>49.10</td>
+            <td>49.93</td>
+        </tr>
+        <tr>
+            <td>Qwen-1.5 (1.8B)</td>
+            <td></td>
+            <td>42.70</td>
+            <td>43.37</td>
+            <td>43.68</td>
+            <td>43.12</td>
+            <td>44.42</td>
+            <td>43.34</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Zhipu</td>
+            <td>GLM-4-Plus</td>
+            <td></td>
+            <td>78.04</td>
+            <td>75.63</td>
+            <td>77.49</td>
+            <td>74.07</td>
+            <td>72.66</td>
+            <td>75.48</td>
+        </tr>
+        <tr>
+            <td>GLM-4-Air</td>
+            <td></td>
+            <td>67.88</td>
+            <td>69.56</td>
+            <td>70.20</td>
+            <td>66.06</td>
+            <td>66.18</td>
+            <td>67.60</td>
+        </tr>
+        <tr>
+            <td>GLM-4-Flash</td>
+            <td></td>
+            <td>63.52</td>
+            <td>65.69</td>
+            <td>66.31</td>
+            <td>63.21</td>
+            <td>63.59</td>
+            <td>64.12</td>
+        </tr>
+        <tr>
+            <td>GLM-4</td>
+            <td></td>
+            <td>63.39</td>
+            <td>56.72</td>
+            <td>54.40</td>
+            <td>57.24</td>
+            <td>55.00</td>
+            <td>58.07</td>
+        </tr>
+        <tr>
+            <td>GLM-4<sup>††</sup> (9B)</td>
+            <td></td>
+            <td>58.51</td>
+            <td>60.48</td>
+            <td>56.32</td>
+            <td>55.04</td>
+            <td>53.97</td>
+            <td>56.87</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Google</td>
+            <td>Gemma-2 (9B)</td>
+            <td></td>
+            <td>75.83</td>
+            <td>72.83</td>
+            <td>75.07</td>
+            <td>69.72</td>
+            <td>70.33</td>
+            <td>72.51</td>
+        </tr>
+        <tr>
+            <td>Gemma (7B)</td>
+            <td></td>
+            <td>45.53</td>
+            <td>50.92</td>
+            <td>46.13</td>
+            <td>47.33</td>
+            <td>46.27</td>
+            <td>47.21</td>
+        </tr>
+        <tr>
+            <td>Gemma (2B)</td>
+            <td></td>
+            <td>46.50</td>
+            <td>51.15</td>
+            <td>49.20</td>
+            <td>48.06</td>
+            <td>48.79</td>
+            <td>48.46</td>
+        </tr>
+        <tr>
+            <td rowspan="2">SAIL (Sea)</td>
+            <td>Sailor<sup>†</sup> (14B)</td>
+            <td></td>
+            <td>78.40</td>
+            <td>72.88</td>
+            <td>69.63</td>
+            <td>69.47</td>
+            <td>68.67</td>
+            <td>72.29</td>
+        </tr>
+        <tr>
+            <td>Sailor<sup>†</sup> (7B)</td>
+            <td></td>
+            <td>74.54</td>
+            <td>68.62</td>
+            <td>62.79</td>
+            <td>64.69</td>
+            <td>63.61</td>
+            <td>67.58</td>
+        </tr>
+        <tr>
+            <td>Cohere for AI</td>
+            <td>Command R (32B)</td>
+            <td></td>
+            <td>71.68</td>
+            <td>71.49</td>
+            <td>66.68</td>
+            <td>67.19</td>
+            <td>63.64</td>
+            <td>68.47</td>
+        </tr>
+        <tr>
+            <td>OpenGVLab</td>
+            <td>InternVL2 (40B)</td>
+            <td>✔</td>
+            <td>70.36</td>
+            <td>68.49</td>
+            <td>64.88</td>
+            <td>65.93</td>
+            <td>60.54</td>
+            <td>66.51</td>
+        </tr>
+        <tr>
+            <td>Damo (Alibaba)</td>
+            <td>SeaLLM-v2.5<sup>†</sup> (7B)</td>
+            <td></td>
+            <td>69.75</td>
+            <td>67.94</td>
+            <td>65.29</td>
+            <td>62.66</td>
+            <td>63.61</td>
+            <td>65.89</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Mistral</td>
+            <td>Pixtral (12B)</td>
+            <td>✔</td>
+            <td>64.81</td>
+            <td>62.68</td>
+            <td>64.72</td>
+            <td>63.93</td>
+            <td>59.49</td>
+            <td>63.25</td>
+        </tr>
+        <tr>
+            <td>Mistral Small (22B)</td>
+            <td></td>
+            <td>65.19</td>
+            <td>65.03</td>
+            <td>63.36</td>
+            <td>61.58</td>
+            <td>59.99</td>
+            <td>63.05</td>
+        </tr>
+        <tr>
+            <td>Mistral-v0.3 (7B)</td>
+            <td></td>
+            <td>56.97</td>
+            <td>59.29</td>
+            <td>57.14</td>
+            <td>58.28</td>
+            <td>56.56</td>
+            <td>57.71</td>
+        </tr>
+        <tr>
+            <td>Mistral-v0.2 (7B)</td>
+            <td></td>
+            <td>56.23</td>
+            <td>59.86</td>
+            <td>57.10</td>
+            <td>56.65</td>
+            <td>55.22</td>
+            <td>56.92</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Microsoft</td>
+            <td>Phi-3 (14B)</td>
+            <td></td>
+            <td>60.07</td>
+            <td>58.89</td>
+            <td>60.91</td>
+            <td>58.73</td>
+            <td>55.24</td>
+            <td>58.72</td>
+        </tr>
+        <tr>
+            <td>Phi-3 (3.8B)</td>
+            <td></td>
+            <td>52.24</td>
+            <td>55.52</td>
+            <td>54.81</td>
+            <td>53.70</td>
+            <td>51.74</td>
+            <td>53.43</td>
+        </tr>
+        <tr>
+            <td>01.AI</td>
+            <td>Yi-1.5 (9B)</td>
+            <td></td>
+            <td>56.20</td>
+            <td>53.36</td>
+            <td>57.47</td>
+            <td>50.53</td>
+            <td>49.75</td>
+            <td>53.08</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Stability AI</td>
+            <td>StableLM 2 (12B)</td>
+            <td></td>
+            <td>53.40</td>
+            <td>54.84</td>
+            <td>51.45</td>
+            <td>51.79</td>
+            <td>50.16</td>
+            <td>52.45</td>
+        </tr>
+        <tr>
+            <td>StableLM 2 (1.6B)</td>
+            <td></td>
+            <td>43.92</td>
+            <td>51.10</td>
+            <td>45.27</td>
+            <td>46.14</td>
+            <td>46.75</td>
+            <td>46.48</td>
+        </tr>
+        <tr>
+            <td>Baichuan</td>
+            <td>Baichuan-2 (7B)</td>
+            <td></td>
+            <td>40.41</td>
+            <td>47.35</td>
+            <td>44.37</td>
+            <td>46.33</td>
+            <td>43.54</td>
+            <td>44.30</td>
+        </tr>
+        <tr>
+            <td>Mesolitica</td>
+            <td>MaLLaM-v2<sup>†</sup> (5B)</td>
+            <td></td>
+            <td>42.57</td>
+            <td>46.44</td>
+            <td>42.24</td>
+            <td>40.82</td>
+            <td>38.74</td>
+            <td>42.08</td>
+        </tr>
+        <tr>
+            <td>Yellow.ai</td>
+            <td>Komodo<sup>†</sup> (7B)</td>
+            <td></td>
+            <td>43.62</td>
+            <td>45.53</td>
+            <td>39.34</td>
+            <td>39.75</td>
+            <td>39.48</td>
+            <td>41.72</td>
+        </tr>
+    </tbody>
+</table>
+
+† menunjukkan LLM yang dilatih dengan dataset Asia Tenggara.
+†† menunjukkan GLM-4 sumber terbuka.
 
 #### Keputusan Penilaian Few-shot untuk MalayMMLU (Ketepatan token pertama)
 <p align="center">
