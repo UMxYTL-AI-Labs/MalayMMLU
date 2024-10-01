@@ -64,7 +64,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         <tr>
             <td rowspan="4">OpenAI</td>
             <td>GPT-4o</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td><strong>87.12</strong></td>
             <td><strong>88.12</strong></td>
             <td><strong>83.83</strong></td>
@@ -74,7 +74,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
         <tr>
             <td>GPT-4</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td><ins>82.90</ins></td>
             <td><ins>83.91</ins></td>
             <td>78.80</td>
@@ -84,7 +84,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
         <tr>
             <td>GPT-4o mini</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td>82.03</td>
             <td>81.50</td>
             <td>78.51</td>
@@ -196,7 +196,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
         <tr>
             <td>Qwen-2-VL (7B)</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td>68.16</td>
             <td>63.62</td>
             <td>67.58</td>
@@ -206,7 +206,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
         <tr>
             <td>Qwen-2-VL (2B)</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td>58.22</td>
             <td>55.56</td>
             <td>57.51</td>
@@ -371,7 +371,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         <tr>
             <td>OpenGVLab</td>
             <td>InternVL2 (40B)</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td>70.36</td>
             <td>68.49</td>
             <td>64.88</td>
@@ -393,7 +393,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         <tr>
             <td rowspan="4">Mistral</td>
             <td>Pixtral (12B)</td>
-            <td>✔</td>
+            <td style="color: green;">✔</td>
             <td>64.81</td>
             <td>62.68</td>
             <td>64.72</td>
@@ -519,7 +519,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
     </tbody>
 </table>
-
+Highest scores are bolded and second highest scores are <ins>underlined</ins>. 
 † denotes LLMs fine-tuned with Southeast Asia datasets.
 †† denotes open-source GLM-4.
 
