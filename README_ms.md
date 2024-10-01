@@ -540,8 +540,22 @@ pip install -r requirements.txt
 
 Kami menyediakan contoh skrip penilaian di <code>scripts</code>
 
-
-#### Penilaian berdasarkan ketepatan token pertama
+```
+usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
+options:
+  -h, --help            show this help message and exit
+  --by_letter           Gunakan flag ini untuk mengira ketepatan token pertama
+  --base_model BASE_MODEL
+                        Nama model atau folder yang mengandungi model terlatih
+  --output_folder OUTPUT_FOLDER
+                        Folder untuk menyimpan output
+  --playground PLAYGROUND
+                        Set kepada True untuk membolehkan mod playground (default: False).
+  --task TASK           Tentukan tugas yang akan dilaksanakan (default: 'MalayMMLU').
+  --shot SHOT           Tentukan nombor shot (default: 0).
+  --token TOKEN         Tentukan HuggingFace token
+```
+#### Penilaian berdasarkan ketepatan token pertama untuk LLM
 
 * <code>PRED_FILE</code>: nama fail ramalan
     * Contoh, <code>"output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_True_0shot.csv"</code>
@@ -594,7 +608,7 @@ python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
 ```
 
 #### Penilaian untuk LVLM
-Langkah dan cara yang sama untuk  <code>evaluate_pixtral.py, evaluate_qwen_vl.py, evaluate_intern_vl.py</code>
+Langkah dan cara penggunaan yang sama untuk <code>evaluate_pixtral.py, evaluate_qwen_vl.py, evaluate_intern_vl.py</code>
 ## Rujukan
 
 ```bibtex
