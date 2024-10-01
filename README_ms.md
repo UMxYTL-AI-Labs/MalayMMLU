@@ -1,4 +1,6 @@
-# MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language
+# MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Laman Rasmi)
+
+Dilancarkan pada 27 September 2024
 
 <h4 align="center">
     <p>
