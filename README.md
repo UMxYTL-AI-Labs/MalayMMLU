@@ -64,7 +64,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 # Installation 
 
 ```
-git clone https://github.com/YTLAILabs/MalayMMLU
+git clone https://github.com/UMxYTL-AI-Labs/MalayMMLU.git
 cd MalayMMLU
 pip install -r requirements.txt
 ```
