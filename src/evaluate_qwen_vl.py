@@ -66,7 +66,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--by_letter", 
                         action='store_true', 
-                        help="Use this flag to calculate first token accuracy")
+                        help="Use this flag to calculate first token accuracy. For calculating full answer accuracy, do not include this flag in args")
     parser.add_argument("--base_model",
                          type=str, 
                          help="Path to pretrained model", 
@@ -87,7 +87,7 @@ def parse_args():
     parser.add_argument("--shot",
                         type=int, 
                         default=0,
-                        help="Specify the number of shots (default: 0).")
+                        help="Provide the number of shots: 0,1,2 or 3")
     parser.add_argument("--token",
                         type=str,
                         help='Specify the HuggingFace token')

@@ -72,7 +72,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Benchmarking MalayMMLU on Zhipu's GLM models")
     parser.add_argument("--model",required=True, type=str, help="Model name of the GLM model. Example: glm-4-plus", default="glm-4-plus")
     parser.add_argument("--api_key", required=True, help="Zhipu API Key")
-    parser.add_argument("--shot",type=int, default=0, help='Provide the number of shots: 0,1,2 or 3')
-    
+    parser.add_argument("--shot",
+                        type=int, 
+                        default=0,
+                        help="Provide the number of shots: 0,1,2 or 3")
     args = parser.parse_args()
     main(api_key=args.api_key,model=args.model, shot=args.shot)

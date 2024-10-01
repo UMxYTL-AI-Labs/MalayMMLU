@@ -38,7 +38,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
         <tr>
             <th rowspan="2">Organisasi</th>
             <th rowspan="2">Model</th>
-            <th rowspan="2">Penglihatan</th>
+            <th rowspan="2">Visual</th>
             <th colspan="7">Ketepatan</th>
         </tr>
         <tr>

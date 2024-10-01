@@ -1,7 +1,7 @@
 TOKEN=<YOUR_HF_TOKEN>
 SHOT=0
 
-# first token accuracy
+## first token accuracy
 python src/evaluate.py  --by_letter --shot $SHOT --task=MalayMMLU \
                     --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
                     --output_folder=output/$SHOT/ --token $TOKEN
@@ -65,11 +65,26 @@ python src/evaluate.py  --by_letter --shot $SHOT --task=MalayMMLU \
 python src/evaluate.py  --by_letter --shot $SHOT --task=MalayMMLU \
                     --base_model=mesolitica/mallam-5b-20k-instructions-v2 \
                     --output_folder=output/$SHOT/ --token $TOKEN
+
+# Qwen2-VL
+python src/evaluate_qwen_vl.py  --by_letter --shot $SHOT --task=MalayMMLU \
+                    --base_model=Qwen/Qwen2-VL-2B-Instruct \
+                    --output_folder=output/ --token $TOKEN
+# Pixtral
+python src/evaluate_pixtral.py  --by_letter --shot $SHOT --task=MalayMMLU \
+                    --base_model=mistral-community/pixtral-12b \
+                    --output_folder=output/ --token $TOKEN
+# InternVL2
+python src/evaluate_intern_vl.py  --by_letter --shot $SHOT --task=MalayMMLU \
+                    --base_model=OpenGVLab/InternVL2-40B \
+                    --output_folder=output/ --token $TOKEN
 
 python src/calculate_accuracies.py --all --pred_dir output/$SHOT/ \
 		--shot $SHOT \
 		--output_dir=results/$SHOT/
-# full answer accuracy
+
+
+## full answer accuracy
 
 python src/evaluate.py  --shot $SHOT --task=MalayMMLU \
                     --base_model=meta-llama/Meta-Llama-3-8B-Instruct  \
@@ -134,6 +149,20 @@ python src/evaluate.py  --shot $SHOT --task=MalayMMLU \
 python src/evaluate.py  --shot $SHOT --task=MalayMMLU \
                     --base_model=mesolitica/mallam-5b-20k-instructions-v2 \
                     --output_folder=output/$SHOT/ --token $TOKEN
+
+# Qwen2-VL
+python src/evaluate_qwen_vl.py --shot $SHOT --task=MalayMMLU \
+                    --base_model=Qwen/Qwen2-VL-2B-Instruct \
+                    --output_folder=output/ --token $TOKEN
+# Pixtral
+python src/evaluate_pixtral.py --shot $SHOT --task=MalayMMLU \
+                    --base_model=mistral-community/pixtral-12b \
+                    --output_folder=output/ --token $TOKEN
+# InternVL2
+python src/evaluate_intern_vl.py --shot $SHOT --task=MalayMMLU \
+                    --base_model=OpenGVLab/InternVL2-40B \
+                    --output_folder=output/ --token $TOKEN 
+
 
 python src/calculate_accuracies.py --all --pred_dir output/$SHOT/ \
 		--shot $SHOT \
