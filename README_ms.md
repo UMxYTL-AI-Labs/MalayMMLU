@@ -1,16 +1,5 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language
 
-<p align="center"> 
-    Soon Chang Poh, 
-    Sze Jue Yang 
-    Jeraelyn Ming Li Tan, 
-    Lawrence Leroy Tze Yao Chieng, 
-    Jia Xuan Tan, 
-    Zhenyu Yu, 
-    Chee Mun Foong, 
-    <a href="http://cs-chan.com/" target="_blank">Chee Seng Chan</a> 
-</p>
-
 <h4 align="center">
     <p>
         <a href="https://github.com/YTLAILabs/MalayMMLU/">English</a> |
