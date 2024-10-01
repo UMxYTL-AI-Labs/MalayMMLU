@@ -13,7 +13,7 @@ Dilancarkan pada 27 September 2024
         </p>
 </h4>
 
-# Pengenalan
+## Pengenalan
 
 MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask Language Understanding (MMLU) dalam Bahasa Inggeris) pertama untuk Bahasa Melayu. Tanda aras ini merangkumi 24,213 soalan yang meliputi peringkat pendidikan rendah (Tahun 1-6) dan menengah (Tingkatan 1-5) di Malaysia, terdiri daripada 5 topik utama yang dibahagikan kepada 22 subjek.
 
@@ -57,24 +57,24 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 | [Komodo (7B)](https://huggingface.co/Yellow-AI-NLP/komodo-7b-base)   | 43.62             | 45.53               | 39.34         | 39.75                   | 39.48           | 41.72            |
 | [MaLLaM-v2 (5B)](https://huggingface.co/mesolitica/mallam-5b-20k-instructions-v2)| 42.56             | 46.42               | 42.16         | 40.81                   | 38.81           | 42.07            |
 
-### Keputusan Penilaian Few-shot untuk MalayMMLU (Ketepatan token pertama)
+#### Keputusan Penilaian Few-shot untuk MalayMMLU (Ketepatan token pertama)
 <p align="center">
 <img src="imgs/Few-shot%20comparison.png"   width="400" >
 </p>
 
-# Pemasangan
+## Pemasangan
 
 ```
 git clone https://github.com/UMxYTL-AI-Labs/MalayMMLU.git
 cd MalayMMLU
 pip install -r requirements.txt
 ```
-# Penilaian
+## Penilaian
 * <code>SHOT</code> : 0, 1, 2 atau 3
 * <code>--by_letter</code> flag untuk penilaian token pertama
 * <code>MODEL</code>: LLM's HuggingFace repo id seperti <code>meta-llama/Meta-Llama-3-8B-Instruct</code>
 * <code>PRED_FILE</code>: nama fail ramalan
-### Penilaian berdasarkan ketepatan token pertama
+#### Penilaian berdasarkan ketepatan token pertama
 ```
 # prediction
 python src/evaluate.py  --by_letter --shot $SHOT --use_chat_template True  --task=MalayMMLU \
@@ -86,7 +86,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
 ```
-### Penilaian berdasarkan ketepatan jawapan penuh
+#### Penilaian berdasarkan ketepatan jawapan penuh
 ```
 python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
                     --base_model=$MODEL  \
@@ -98,7 +98,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```
 
-### Penilaian untuk GPT
+#### Penilaian untuk GPT
 
 * <code>API_KEY</code>: OpenAI API key
 ```
