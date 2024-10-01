@@ -9,7 +9,7 @@ Dilancarkan pada 27 September 2024
     <p>
         <p align="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
         📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Paper</a> • 
-        🤗 <a href="https://huggingface.co/collections/ytlailabs2024/malaymmlu-66567e2c1ee98abe52bf955d" target="_blank" style="margin-left: 10px">Dataset</a> 
+        🤗 <a href="https://huggingface.co/datasets/UMxYTLAILabs/MalayMMLU" target="_blank" style="margin-left: 10px">Dataset</a> 
         </p>
 </h4>
 
@@ -65,7 +65,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 # Pemasangan
 
 ```
-git clone https://github.com/YTLAILabs/MalayMMLU
+git clone https://github.com/UMxYTL-AI-Labs/MalayMMLU.git
 cd MalayMMLU
 pip install -r requirements.txt
 ```
