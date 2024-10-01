@@ -138,6 +138,6 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
 
 
-# Acknowledgement
+## Acknowledgement
 
 The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
