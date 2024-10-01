@@ -13,7 +13,7 @@ Released on September 27, 2024
         </p>
 </h4>
 
-# Introduction
+## Introduction
 
 MalayMMLU is the first multitask language understanding (MLU) for Malay Language. The benchmark comprises 24,213 questions spanning both primary (Year 1-6) and secondary (Form 1-5) education levels in Malaysia, encompassing 5 broad topics that further divide into 22 subjects. 
 <p align="center">
@@ -28,9 +28,9 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 | **Others**     | Life Skills (Primary, Secondary), Principles of Accounting (Secondary), Economics (Secondary), Business (Secondary), Agriculture (Secondary)                                                                                                                                                                                                                                                  |
 | **Humanities** | Quran and Sunnah (Secondary), Islam (Primary, Secondary), Sports Science Knowledge (Secondary)                                                                                                                                                                                                                                                                                                 |
 
-# Result
+## Result
 
-### Zero-shot results of LLMs on MalayMMLU (First token accuracy)
+#### Zero-shot results of LLMs on MalayMMLU (First token accuracy)
 
 | **Model**               | **Language** | **Humanities** | **STEM** | **Social Science** | **Others** | **Average** |
 |-------------------------|-------------------|---------------------|---------------|-------------------------|-----------------|------------------|
@@ -56,23 +56,23 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 | [Komodo (7B)](https://huggingface.co/Yellow-AI-NLP/komodo-7b-base)   | 43.62             | 45.53               | 39.34         | 39.75                   | 39.48           | 41.72            |
 | [MaLLaM-v2 (5B)](https://huggingface.co/mesolitica/mallam-5b-20k-instructions-v2)| 42.56             | 46.42               | 42.16         | 40.81                   | 38.81           | 42.07            |
 
-### Few-shot results of LLMs on MalayMMLU (First token accuracy)
+#### Few-shot results of LLMs on MalayMMLU (First token accuracy)
 <p align="center">
 <img src="imgs/Few-shot%20comparison.png"   width="400" >
 </p>
 
-# Installation 
+## Installation 
 
 ```
 git clone https://github.com/UMxYTL-AI-Labs/MalayMMLU.git
 cd MalayMMLU
 pip install -r requirements.txt
 ```
-# Evaluation
+## Evaluation
 
 We provide example evaluation scripts in <code>scripts</code>
 
-### Evaluation by first token accuracy
+#### Evaluation by first token accuracy
 
 * <code>SHOT</code> : Number of shots 0, 1, 2 or 3
 * <code>--by_letter</code>:
@@ -94,7 +94,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
 ```
-### Evaluation by full answer probability
+#### Evaluation by full answer probability
 ```
 python src/evaluate.py  --shot $SHOT --use_chat_template True  --task=MalayMMLU \
                     --base_model=$MODEL  \
@@ -106,7 +106,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```
 
-### Evaluation for GPT
+#### Evaluation for GPT
 
 * <code>API_KEY</code>: OpenAI API key
 ```
