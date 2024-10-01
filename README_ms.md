@@ -611,7 +611,7 @@ Langkah dan cara penggunaan yang sama untuk <code>evaluate_pixtral.py, evaluate_
 
 #### Penilaian untuk Model Sumber Tertutup 
 
-* <code>API_KEY</code>: kunci api OpenAI 
+* <code>API_KEY</code>: kunci API OpenAI 
 ```
 # ramalan
 python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
