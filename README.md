@@ -519,7 +519,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
         </tr>
     </tbody>
 </table>
-Highest scores are bolded and second highest scores are <ins>underlined</ins>. 
+Highest scores are **bolded** and second highest scores are <ins>underlined</ins>. 
 † denotes LLMs fine-tuned with Southeast Asia datasets.
 †† denotes open-source GLM-4.
 
