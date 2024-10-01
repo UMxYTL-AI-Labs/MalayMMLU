@@ -538,7 +538,7 @@ pip install -r requirements.txt
 ```
 ## Penilaian
 
-Kami menyediakan contoh skrip penilaian di <code>scripts</code>
+Kami telah menyediakan contoh skrip penilaian di <code>scripts</code>
 
 ```
 usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
@@ -552,7 +552,7 @@ options:
   --playground PLAYGROUND
                         Set kepada True untuk membolehkan mod playground (default: False).
   --task TASK           Tentukan tugas yang akan dilaksanakan (default: 'MalayMMLU').
-  --shot SHOT           Tentukan nombor shot (default: 0).
+  --shot SHOT           Senaraikan nombor shot: 0,1,2 or 3 (default: 0).
   --token TOKEN         Tentukan HuggingFace token
 ```
 #### Penilaian berdasarkan ketepatan token pertama untuk LLM
@@ -593,12 +593,11 @@ python src/evaluate.py  --shot $SHOT True  --task=MalayMMLU \
 # pengiraan ketepatan                  
 PRED_FILE=output/MalayMMLU_result_Meta-Llama-3-8B-Instruct_False_0shot.csv
 
-# pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
-# Pengiraan ketepatan untuk semua fail ramalan dalam folder
+# Pengiraan ketepatan untuk semua fail-fail ramalan dalam folder
 
 PRED_DIR=output/
 
@@ -609,6 +608,30 @@ python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
 
 #### Penilaian untuk LVLM
 Langkah dan cara penggunaan yang sama untuk <code>evaluate_pixtral.py, evaluate_qwen_vl.py, evaluate_intern_vl.py</code>
+
+#### Penilaian untuk Model Sumber Tertutup 
+
+* <code>API_KEY</code>: kunci api OpenAI 
+```
+# ramalan
+python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
+```
+* muat turun fail ramalan (<code>jsonl</code> file ) daripada [platform OpenAI](https://platform.openai.com/batches)
+* Namakan fail ramalan tersebut mengikut format berikutnya: <code>MalayMMLU_{$MODEL}_{$SHOT}shot.jsonl</code>
+    * Contoh: <code>MalayMMLU_gpt3_0shot.jsonl</code>
+```
+# pengiraan ketepatan
+python src/calculate_accuracies.py --pred_files $PRED_FILE \
+    --shot=$SHOT \
+    --output_dir=output/ --closed
+
+# Pengiraan ketepatan untuk semua fail-fail ramalan dalam folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/ --closed
+```
+Langkah dan cara penggunaan yang sama untuk <code>evaluate_glm.py
+
 ## Rujukan
 
 ```bibtex

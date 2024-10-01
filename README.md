@@ -551,7 +551,7 @@ options:
   --playground PLAYGROUND
                         Set this to True to enable playground mode (default: False).
   --task TASK           Specify the task to be executed (default: 'MalayMMLU').
-  --shot SHOT           Specify the number of shots (default: 0).
+  --shot SHOT           Provide the number of shots: 0,1,2 or 3 (default: 0).
   --token TOKEN         Specify the HuggingFace token
 ```
 #### Evaluation by first token accuracy for LLM
