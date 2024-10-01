@@ -543,7 +543,7 @@ Kami menyediakan contoh skrip penilaian di <code>scripts</code>
 ```
 usage: evaluate.py [-h] [--by_letter] --base_model BASE_MODEL --output_folder OUTPUT_FOLDER [--playground PLAYGROUND] [--task TASK] [--shot SHOT] [--token TOKEN]
 options:
-  -h, --help            show this help message and exit
+  -h, --help            mesej penggunaan 
   --by_letter           Gunakan flag ini untuk mengira ketepatan token pertama
   --base_model BASE_MODEL
                         Nama model atau folder yang mengandungi model terlatih
