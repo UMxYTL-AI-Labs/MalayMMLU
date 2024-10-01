@@ -581,7 +581,7 @@ python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 ```
 * Muat turun fail ramalan (fail <code>jsonl</code>) daripada [OpenAI platform](https://platform.openai.com/batches)
 * Namakan fail mengikut format berikutnya: <code>MalayMMLU_{$MODEL}_{$SHOT}shot.jsonl</code>
-    * Example: <code>MalayMMLU_gpt3_0shot.jsonl</code>
+    * Contoh: <code>MalayMMLU_gpt3_0shot.jsonl</code>
 ```
 # Pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
