@@ -520,7 +520,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
         </tr>
     </tbody>
 </table>
-Markah tertinggi ditandakan dengan tebal dan markah kedua tertinggi <ins>digariskan</ins>. 
+Markah tertinggi telah <strong>ditebalkan</strong> dan markah kedua tertinggi telah <ins>digariskan</ins>. 
 † menunjukkan LLM yang dilatih dengan dataset Asia Tenggara.
 †† menunjukkan GLM-4 sumber terbuka.
 
@@ -593,9 +593,9 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
 
 ```bibtex
 @InProceedings{MalayMMLU2024,
-    author    = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng },
+    author    = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng},
     title     = {MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language},
-    booktitle = {Empirical Methods in Natural Language Processing (EMNLP)},
+    booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2024},
     month     = {November},
     year      = {2024},
 }
