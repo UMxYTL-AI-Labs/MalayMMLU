@@ -113,7 +113,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --output_dir=output/
 ```
 
-## Sitasi
+## Rujukan
 
 ```bibtex
 @InProceedings{MalayMMLU2024,
