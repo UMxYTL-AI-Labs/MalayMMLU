@@ -559,6 +559,11 @@ python src/evaluate.py  --by_letter --shot $SHOT  --task=MalayMMLU \
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
+
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/
 ```
 #### Penilaian berdasarkan ketepatan jawapan penuh
 ```
@@ -570,6 +575,10 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/
 ```
 
 #### Penilaian untuk GPT
@@ -586,7 +595,12 @@ python src/evaluate_gpt.py --model gpt-3.5-turbo --api_key $API_KEY --shot $SHOT
 # Pengiraan ketepatan
 python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
-    --output_dir=output/ --closed 
+    --output_dir=output/ --closed
+
+# Pengiraan ketepatan untuk semua fail ramalan dalam folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
+    --shot=$SHOT \
+    --output_dir=output/ --closed
 ```
 
 ## Rujukan
