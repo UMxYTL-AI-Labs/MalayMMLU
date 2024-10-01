@@ -520,8 +520,8 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
     </tbody>
 </table>
 
-† denotes LLMs fine-tuned with Southeast Asia datasets
-†† denotes open-source GLM-4
+† denotes LLMs fine-tuned with Southeast Asia datasets.
+†† denotes open-source GLM-4.
 
 #### Few-shot results of LLMs on MalayMMLU (First token accuracy)
 <p align="center">
