@@ -561,7 +561,8 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --data_file=$SHOT \
     --output_dir=output/
 
-python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+# calculate accuracy for all prediction files in a folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/
 ```
@@ -575,7 +576,8 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --shot=$SHOT \
     --output_dir=output/
 
-python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+# calculate accuracy for all prediction files in a folder
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/
 ```
@@ -597,7 +599,7 @@ python src/calculate_accuracies.py --pred_files $PRED_FILE \
     --output_dir=output/ --closed
 
 # calculate accuracy for all prediction files in a folder
-python src/calculate_accuracies.py --pred_dir  $PRED_DIR \
+python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --shot=$SHOT \
     --output_dir=output/ --closed
 ```
