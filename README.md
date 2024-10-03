@@ -9,7 +9,8 @@ Released on September 27, 2024
     <p>
         <p align="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
         📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Paper</a> • 
-        🤗 <a href="https://huggingface.co/datasets/UMxYTLAILabs/MalayMMLU" target="_blank" style="margin-left: 10px">Dataset</a> 
+        🤗 <a href="https://huggingface.co/datasets/UMxYTLAILabs/MalayMMLU" target="_blank" style="margin-left: 10px">Dataset</a>  • 
+        📜  <a href="https://github.com/UMxYTL-AI-Labs/MalayMMLU/blob/main/MalayMMLU_Poster.pdf" target="_blank" style="margin-left: 10px">Poster</a> 
         </p>
 </h4>
 
