@@ -628,9 +628,7 @@ python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --output_dir=output/ --closed
 ```
 The steps and usage are similar for <code>evaluate_glm.py
-
 ## Citation
-
 ```bibtex
 @InProceedings{MalayMMLU2024,
     author    = {Poh, Soon Chang and Yang, Sze Jue and Tan, Jeraelyn Ming Li and  Chieng, Lawrence Leroy Tze Yao and Tan, Jia Xuan and Yu, Zhenyu and Foong, Chee Mun and Chan, Chee Seng},
@@ -640,11 +638,7 @@ The steps and usage are similar for <code>evaluate_glm.py
     year      = {2024},
 }
 ```
-
 ## Feedback
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
-
-
 ## Acknowledgement
-
 The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
