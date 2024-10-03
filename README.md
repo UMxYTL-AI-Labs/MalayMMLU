@@ -628,6 +628,7 @@ python src/calculate_accuracies.py --all --pred_dir  $PRED_DIR \
     --output_dir=output/ --closed
 ```
 The steps and usage are similar for <code>evaluate_glm.py
+
 ## Citation
 
 ```bibtex
@@ -639,6 +640,7 @@ The steps and usage are similar for <code>evaluate_glm.py
     year      = {2024},
 }
 ```
+
 ## Feedback
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
 
