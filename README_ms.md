@@ -8,7 +8,7 @@ Dilancarkan pada 27 September 2024
         <b href="https://github.com/YTLAILabs/MalayMMLU/blob/main/README_ms.md">Bahasa Melayu</b> 
     <p>
         <p align="center" style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-        📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Penerbitan</a> • 
+        📄 <a href="https://openreview.net/pdf?id=VAXwQqkp5e" target="_blank" style="margin-right: 15px; margin-left: 10px">Penerbitan (EMNLP2024)</a> • 
         🤗 <a href="https://huggingface.co/datasets/UMxYTLAILabs/MalayMMLU" target="_blank" style="margin-left: 10px">Set Data</a>   • 
         📜  <a href="https://github.com/UMxYTL-AI-Labs/MalayMMLU/blob/main/MalayMMLU_Poster.pdf" target="_blank" style="margin-left: 10px">Poster</a> 
         </p>
