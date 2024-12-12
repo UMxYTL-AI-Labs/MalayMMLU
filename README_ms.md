@@ -64,25 +64,36 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td>38.02</td>
         </tr>
         <tr>
+            <td>YTL</td>
+            <td style="font-family: sans-serif;">Ilmu 0.1</td>
+            <td></td>
+            <td><strong>87.77</strong></td>
+            <td><strong>89.26</strong></td>
+            <td><strong>86.66</strong></td>
+            <td><strong>85.27</strong></td>
+            <td><strong>86.40</strong></td>
+            <td><strong>86.98</strong></td>
+        </tr>
+        <tr>
             <td rowspan="4">OpenAI</td>
             <td>GPT-4o</td>
             <td style="color: green;">✔</td>
-            <td><strong>87.12</strong></td>
-            <td><strong>88.12</strong></td>
-            <td><strong>83.83</strong></td>
-            <td><strong>82.58</strong></td>
-            <td><strong>83.09</strong></td>
-            <td><strong>84.98</strong></td>
+            <td><ins>87.12</ins></td>
+            <td><ins>88.12</ins></td>
+            <td><ins>83.83</ins></td>
+            <td><ins>82.58</ins></td>
+            <td><ins>83.09</ins></td>
+            <td><ins>84.98</ins></td>
         </tr>
         <tr>
             <td>GPT-4</td>
             <td style="color: green;">✔</td>
-            <td><ins>82.90</ins></td>
-            <td><ins>83.91</ins></td>
+            <td>82.90</td>
+            <td>83.91</td>
             <td>78.80</td>
-            <td><ins>77.29</ins></td>
-            <td><ins>77.33</ins></td>
-            <td><ins>80.11</ins></td>
+            <td>77.29</td>
+            <td>77.33</td>
+            <td>80.11</td>
         </tr>
         <tr>
             <td>GPT-4o mini</td>
@@ -105,7 +116,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td>67.78</td>
         </tr>
         <tr>
-            <td rowspan="7">Meta</td>
+            <td rowspan="8">Meta</td>
             <td>LLaMA-3.1 (70B)</td>
             <td></td>
             <td>78.75</td>
@@ -114,6 +125,16 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td>77.20</td>
             <td>75.32</td>
             <td>78.44</td>
+        </tr>
+        <tr>
+            <td>LLaMA-3.3 (70B)</td>
+            <td></td>
+            <td>78.82</td>
+            <td>80.46</td>
+            <td>78.71</td>
+            <td>75.79</td>
+            <td>73.85</td>
+            <td>77.38</td>
         </tr>
         <tr>
             <td>LLaMA-3.1 (8B)</td>
@@ -181,7 +202,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td></td>
             <td>79.09</td>
             <td>79.95</td>
-            <td><ins>80.88</ins></td>
+            <td>80.88</td>
             <td>75.80</td>
             <td>75.05</td>
             <td>77.79</td>
@@ -360,6 +381,35 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td>67.58</td>
         </tr>
         <tr>
+            <td rowspan="3">Mesolitica</td>
+            <td>MaLLaM-v2.5 Small<sup>‡</sup></td>
+            <td></td>
+            <td>73.00</td>
+            <td>71.00</td>
+            <td>70.00</td>
+            <td>72.00</td>
+            <td>70.00</td>
+            <td>71.53</td>
+            </tr>
+            <td>MaLLaM-v2.5 Tiny<sup>‡</sup></td>
+            <td></td>
+            <td>67.00</td>
+            <td>66.00</td>
+            <td>68.00</td>
+            <td>69.00</td>
+            <td>66.00</td>
+            <td>67.32</td>
+            </tr>
+            <td>MaLLaM-v2<sup>†</sup> (5B)</td>
+            <td></td>
+            <td>42.57</td>
+            <td>46.44</td>
+            <td>42.24</td>
+            <td>40.82</td>
+            <td>38.74</td>
+            <td>42.08</td>
+        </tr>
+        <tr>
             <td>Cohere for AI</td>
             <td>Command R (32B)</td>
             <td></td>
@@ -498,17 +548,6 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
             <td>44.30</td>
         </tr>
         <tr>
-            <td>Mesolitica</td>
-            <td>MaLLaM-v2<sup>†</sup> (5B)</td>
-            <td></td>
-            <td>42.57</td>
-            <td>46.44</td>
-            <td>42.24</td>
-            <td>40.82</td>
-            <td>38.74</td>
-            <td>42.08</td>
-        </tr>
-        <tr>
             <td>Yellow.ai</td>
             <td>Komodo<sup>†</sup> (7B)</td>
             <td></td>
@@ -524,6 +563,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 Markah tertinggi telah <strong>ditebalkan</strong> dan markah kedua tertinggi telah <ins>digariskan</ins>. 
 † menunjukkan LLM yang dilatih dengan dataset Asia Tenggara.
 †† menunjukkan GLM-4 sumber terbuka.
+‡ keputusan daripada https://mesolitica.com/mallam.
 
 #### Keputusan Penilaian Few-shot untuk MalayMMLU (Ketepatan token pertama)
 <p align="center">
