@@ -1,6 +1,7 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Laman Rasmi)
 
 Dilancarkan pada 27 September 2024
+[![Bilangan paparan halaman](https://badges.toozhao.com/badges/01J9P2R033FHASG7RVP6QSTE3P/green.svg)](https://badges.toozhao.com/stats/01J9P2R033FHASG7RVP6QSTE3P "Get your own page views count badge on badges.toozhao.com")
 
 <h4 align="center">
     <p>
