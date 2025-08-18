@@ -1,8 +1,8 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Official site)
 
+Updated on August 18, 2025 (issues #2 and #3 resolved)
 Released on September 27, 2024
 
-[![Page Views Count](https://badges.toozhao.com/badges/01JG1WKHXF0H45K8TPG3E1B8DG/blue.svg)](https://badges.toozhao.com/stats/01JG1WKHXF0H45K8TPG3E1B8DG "Get your own page views count badge on badges.toozhao.com")
 
 <h4 align="center">
     <p>
@@ -685,3 +685,4 @@ The steps and usage are similar for <code>evaluate_glm.py
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
 ## Acknowledgement
 The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
