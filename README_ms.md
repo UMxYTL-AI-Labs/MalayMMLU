@@ -1,8 +1,7 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Laman Rasmi)
 
-Dilancarkan pada 27 September 2024
-
-[![Bilangan Paparan Halaman](https://badges.toozhao.com/badges/01JG1WKHXF0H45K8TPG3E1B8DG/blue.svg)](https://badges.toozhao.com/stats/01JG1WKHXF0H45K8TPG3E1B8DG "Get your own page views count badge on badges.toozhao.com")
+- Dikemas kini pada 18 Ogos 2025 (isu #2 dan #3 telah diselesaikan)
+- Dilancarkan pada 27 September 2024
 
 <h4 align="center">
     <p>
@@ -693,3 +692,4 @@ Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hu
 ## Penghargaan
 
 Kod ini dibina atas [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
