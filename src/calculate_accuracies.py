@@ -98,7 +98,7 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
 
 def main(pred_files, shot, output_dir,closed_flag):
     os.makedirs(output_dir, exist_ok=True)
-    mmlu = pd.read_json(f'/workspace/MalayMMLU/data/MalayMMLU_{shot}shot.json')
+    mmlu = pd.read_json(f'data/MalayMMLU_{shot}shot.json')
     print("loaded data")
     
     
