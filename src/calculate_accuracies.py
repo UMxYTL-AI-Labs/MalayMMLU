@@ -24,8 +24,14 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
                 
                 result = pd.read_csv(filename)
                 
-                split = filename.split("_") 
-                by_letter = split[3]
+                # Fixed filename parsing logic
+                base_filename = os.path.basename(filename)
+                # For filename with hyphens, like: MalayMMLU_result_Malaysian-Qwen2.5-14B-Reasoning-SFT_False_0shot.csv
+                # We need to find the last two underscores to get by_letter and shot info
+                parts = base_filename.split("_")
+                by_letter = parts[-2]  # "False" part of the evaluation file name generated from evaluation
+                shot_part = parts[-1].replace(".csv", "")  # "0shot"
+                
                 if by_letter == "True":
             
                     correct_org = 0
@@ -66,9 +72,11 @@ def calculate_accuracy(task,mmlu,filename,closed_flag, keep_idxs=None):
                 
                 result = pd.read_csv(filename)
                 
-                split = filename.split("_") 
-                by_letter = split[3]
-            
+                # Fixed filename parsing logic
+                base_filename = os.path.basename(filename)
+                parts = base_filename.split("_")
+                by_letter = parts[-2]  # "False"
+                
                 if by_letter == "True":
             
                     correct_org = 0
@@ -109,9 +117,14 @@ def main(pred_files, shot, output_dir,closed_flag):
 
             if closed_flag: 
                 first_acc, full_acc = calculate_accuracy("MalayMMLU", mmlu, pred_file_str, closed_flag, keep_ids)
-                split = pred_file_str.split("_")
-                models += [split[1], split[1]]
-                shots += [split[2].split(".")[0], split[2].split(".")[0]]
+                # Fixed filename parsing
+                base_filename = os.path.basename(pred_file_str)
+                parts = base_filename.split("_")
+                # Extract model name (everything between "result_" and the last two parts)
+                model_name = "_".join(parts[2:-2])
+                
+                models += [model_name, model_name]
+                shots += [parts[-1].replace(".csv", ""), parts[-1].replace(".csv", "")]
                 by_letter += ["True", "False"]
                 org_accs += [first_acc, full_acc]
 
@@ -120,10 +133,15 @@ def main(pred_files, shot, output_dir,closed_flag):
                 org_acc = calculate_accuracy("MalayMMLU", mmlu, pred_file_str,  closed_flag, keep_ids)
                 org_accs.append(org_acc)
                 
-                split = pred_file_str.split("_")
-                models.append(split[2])
-                by_letter.append(split[3])
-                shots.append(split[4].split(".")[0])
+                # Fixed filename parsing
+                base_filename = os.path.basename(pred_file_str)
+                parts = base_filename.split("_")
+                # Extract model name (everything between "result_" and the last two parts)
+                model_name = "_".join(parts[2:-2])
+                
+                models.append(model_name)
+                by_letter.append(parts[-2])  # "False"
+                shots.append(parts[-1].replace(".csv", ""))  # "0shot"
                 categories += [cat]
 
 
@@ -189,7 +207,7 @@ def main(pred_files, shot, output_dir,closed_flag):
 
             for category in category2amount.keys():
                 category_df = df[df.category == category]
-                if not category_df.empty:
+                if not category_df.empty and category_df.iloc[0]['Accuracy'] is not None:
                     sum_acc += category2amount[category] * category_df.iloc[0]['Accuracy'] 
             average_acc = sum_acc / len(mmlu)
 
@@ -232,4 +250,3 @@ if __name__ == "__main__":
 
     else:
         main(args.pred_files, args.shot, args.output_dir, args.closed)
-
