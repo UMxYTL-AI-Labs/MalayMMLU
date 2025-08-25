@@ -1,6 +1,6 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Official site)
 
-- Updated on August 25, 2025 (Thx to @Faris-faiz)
+- Updated on August 25, 2025 (Thx to @Faris-Faiz, revised calculate_accuracies.py)
 - Updated on August 18, 2025 (issues #2 and #3 resolved)
 - Released on September 27, 2024
 
