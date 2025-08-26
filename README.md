@@ -1,6 +1,6 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Official site)
 
-- Updated on August 25, 2025 (Thx to <a href="https://github.com/purnasth(https://github.com/Faris-Faiz)" target="_blank">Faris-Faiz</a>, revised calculate_accuracies.py)
+- Updated on August 25, 2025 (Thx to <a href="https://github.com/Faris-Faiz" target="_blank">Faris-Faiz</a>, revised calculate_accuracies.py)
 - Updated on August 18, 2025 (issues #2 and #3 resolved)
 - Released on September 27, 2024
 
@@ -686,6 +686,7 @@ The steps and usage are similar for <code>evaluate_glm.py
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
 ## Acknowledgement
 The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
 
 
 
