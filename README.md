@@ -32,7 +32,7 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
 | **Others**     | Life Skills (Primary, Secondary), Principles of Accounting (Secondary), Economics (Secondary), Business (Secondary), Agriculture (Secondary)                                                                                                                                                                                                                                                  |
 | **Humanities** | Quran and Sunnah (Secondary), Islam (Primary, Secondary), Sports Science Knowledge (Secondary)                                                                                                                                                                                                                                                                                                 |
 
-## Result
+## Result (last updated on September 27, 2024)
 
 #### Zero-shot results of LLMs on MalayMMLU (First token accuracy)
 
@@ -686,6 +686,7 @@ The steps and usage are similar for <code>evaluate_glm.py
 Suggestions and opinions (both positive and negative) are greatly welcome. Please contact the author by sending email to `cs.chan at um.edu.my`.
 ## Acknowledgement
 The code base is built upon [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
 
 
 
