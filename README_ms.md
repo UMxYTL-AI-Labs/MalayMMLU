@@ -35,7 +35,7 @@ MalayMMLU ialah tanda aras kefahaman bahasa pelbagai tugas (Massive Multitask La
 ## Keputusan
 
 #### Keputusan Penilaian Zero-shot untuk MalayMMLU (Ketepatan token pertama)
-
+##### (Kemas kini terakhir: 27hb Sept. 2024)
 <table>
     <thead>
         <tr>
@@ -693,6 +693,7 @@ Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hu
 ## Penghargaan
 
 Kod ini dibina atas [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
 
 
 
