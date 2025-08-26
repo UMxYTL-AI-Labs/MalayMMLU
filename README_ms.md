@@ -1,5 +1,6 @@
 # MalayMMLU: A Multitask Benchmark for the Low-Resource Malay Language (Laman Rasmi)
 
+- Dikemas kini pada 25 Ogos 2025 (Terima kasih kepada @Faris-Faiz, pindaan calculate_accuracies.py)
 - Dikemas kini pada 18 Ogos 2025 (isu #2 dan #3 telah diselesaikan)
 - Dilancarkan pada 27 September 2024
 
@@ -692,4 +693,5 @@ Cadangan dan pendapat (sama ada positif atau negatif) amat dialu-alukan. Sila hu
 ## Penghargaan
 
 Kod ini dibina atas [IndoMMLU](https://github.com/fajri91/IndoMMLU)
+
 
