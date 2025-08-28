@@ -88,6 +88,16 @@ MalayMMLU is the first multitask language understanding (MLU) for Malay Language
             <td><ins>84.98</ins></td>
         </tr>
         <tr>
+            <td>GPT-5-mini</td>
+            <td style="color: green;">✔</td>
+            <td>86.32</td>
+            <td>87.12</td>
+            <td>86.29</td>
+            <td>81.93</td>
+            <td>84.67</td>
+            <td>84.93</td>
+        </tr>
+        <tr>
             <td>GPT-4</td>
             <td style="color: green;">✔</td>
             <td>82.90</td>
